@@ -32,7 +32,7 @@ class QuestionTestDataTable extends DataTable
                 ])->render();
             })
             ->editColumn('content', function ($q) {
-                return strip_tags($q->content);
+                return '<div style="width: 500px">'. $q->content.'</div>';
             })
             ->editColumn('type_id', function ($q) {
                 return optional($q->typeTest)->name;
@@ -51,7 +51,7 @@ class QuestionTestDataTable extends DataTable
                 $urlDelete = route('admin.question-test.destroy', $q->id);
                 $lowerModelName = strtolower(class_basename(new QuestionTest()));
                 return view('admin.components.buttons.edit', compact('urlEdit'))->render() . view('admin.components.buttons.delete', compact('urlDelete', 'lowerModelName'))->render();
-            })->rawColumns(['active','action']);
+            })->rawColumns(['active','action','content']);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\DataTables\Scopes\QuestionTestDataTableScope;
 use App\Http\Controllers\Controller;
 use App\Models\QuestionTest;
 use App\Models\QuestionItemTest;
@@ -36,7 +37,10 @@ class QuestionTestController extends Controller
      */
     public function index(QuestionTestDataTable $dataTable)
     {
-        return $dataTable->render('admin.test.question-test.index');
+        $data = request()->all();
+        $lessons = $this->lessonTestRepository->getAll();
+        $types = $this->questionTypeTestRepository->getAll();
+        return $dataTable->addScope(new QuestionTestDataTableScope())->render('admin.test.question-test.index',compact('lessons','data','types'));
     }
 
     /**

@@ -112,7 +112,8 @@ class MemberTestController extends Controller
     public function examTest($id)
     {
         $member_test = MemberTest::with('lessonTest')->find($id);
-        $listQuestion = QuestionTest::inRandomOrder()->with('questionItemTest')->where(['lesson_id'=>$member_test->lesson_id,'active' => 1])->get();
+//        $listQuestion = QuestionTest::inRandomOrder()->with('questionItemTest')->where(['lesson_id'=>$member_test->lesson_id,'active' => 1])->get();
+        $listQuestion = QuestionTest::with('questionItemTest')->where(['lesson_id'=>$member_test->lesson_id,'active' => 1])->get();
         $date = Carbon::parse($member_test->birthday);
         if (empty($listQuestion))
             return redirect()->route('home');
