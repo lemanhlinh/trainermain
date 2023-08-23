@@ -43,8 +43,11 @@ class MemberTestController extends Controller
             DB::commit();
             $getEmail = Setting::where('key', 'email_for_admin')->first();
             $listEmail = explode(',',$getEmail->value);
-            Mail::to($data['email'])->cc($listEmail)->send(new TestOnlineMail($data));
-//            Session::flash('success', trans('message.create_member_test_success'));
+            try {
+                Mail::to($data['email'])->cc($listEmail)->send(new TestOnlineMail($data));
+            }catch (\Exception $ex){
+                Session::flash('danger', trans('Chưa gửi được mail'));
+            }
             return redirect()->route('detailChooseTest', $model->id);
         } catch (\Exception $ex) {
             DB::rollBack();
@@ -75,7 +78,7 @@ class MemberTestController extends Controller
             }
             $newData = $req->only(['lesson_id']);
             $member_test->update($newData);
-            Session::flash('success', trans('message.upda te_member_testr_success'));
+//            Session::flash('success', trans('message.update_member_testr_success'));
             return redirect()->route('guideTest', $id);
         } catch (\Exception $exception) {
             \Log::info([

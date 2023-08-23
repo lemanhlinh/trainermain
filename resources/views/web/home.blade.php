@@ -224,30 +224,18 @@
 @section('link')
     @parent
     <link rel="stylesheet" href="{{ asset('/css/web/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/jquery-ui.min.css') }}">
 
 @endsection
 
 @section('script')
     @parent
-
+    <script src="{{ asset('/js/jquery-ui.min.js') }}"></script>
     <script>
-        // Lấy tham chiếu đến phần tử input datetime-local
-        var datetimeInput = $("#time_ielts_support");
+        $( function() {
+            $( "#time_ielts_support" ).datepicker({ dateFormat: 'dd-mm-yy' });
+        } );
 
-        // Lấy tham chiếu đến biểu tượng lịch
-        var calendarIcon = $("#calendarIcon");
-
-        // Khi người dùng nhấp vào biểu tượng lịch
-        calendarIcon.on("click", function() {
-            // Kích hoạt sự kiện click cho phần tử input datetime-local
-            datetimeInput.trigger("focus");
-        });
-
-        // Khi phần tử input datetime-local được tập trung vào (focus)
-        datetimeInput.on("focus", function() {
-            // Thay đổi loại của phần tử input sang "datetime-local"
-            $(this).prop("type", "datetime-local");
-        });
         $('.list-teacher-show').slick({
             infinite: true,
             slidesToShow: 4,

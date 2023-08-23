@@ -11,7 +11,7 @@
     </a>
 </li>
 <li class="nav-item" >
-    <a class="nav-link @if (request()->is('admin/role*')) active @endif" href="{{ route('home') }}">
+    <a class="nav-link @if (request()->is('admin/role*')) active @endif" href="{{ route('detailPage','trung-tam') }}">
         <i class="fas fa-city"></i>
         <span>Trung tâm</span>
     </a>
