@@ -81,7 +81,11 @@
             showNotification(messageHTML.outerHTML);
         }
 
-        setInterval(generateFakeNotification, 10000);
+        setInterval(generateFakeNotification, getRandomTime(10, 30));
+
+        function getRandomTime(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min) * 1000;
+        }
     </script>
     <script>
         let toastrSuccsee = '{{ Session::get('success') }}';
