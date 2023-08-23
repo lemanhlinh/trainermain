@@ -1,0 +1,11 @@
+require('./bootstrap');
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+// import 'datatables.net-bs4';
+// import 'datatables.net-buttons-bs4';
+// import 'datatables.net-bs4-select-bs4';
+// import 'datatables.net-bs4-searchpanes-bs4';
+require('datatables.net-bs4');
+require('datatables.net-buttons-bs4');
+require('datatables.net-select-bs4');
+require('datatables.net-searchpanes-bs4');

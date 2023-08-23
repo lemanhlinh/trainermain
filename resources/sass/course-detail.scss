@@ -1,0 +1,295 @@
+.top-content-news{
+    .banner-home-course{
+        background: #FFECCA;
+        padding: 80px 0;
+        @media (max-width: 768px) {
+            padding: 40px 0;
+        }
+        img{
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .title-course{
+            color: #E5AE35;
+            font-size: 44px;
+            margin-bottom: 45px;
+            @media (max-width: 768px) {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+        }
+        .price-course{
+            margin-bottom: 45px;
+            color: #BC2330;
+            font-size: 44px;
+            font-family: HelveticaNeue-Bold;
+            @media (max-width: 768px) {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+}
+.btn-course{
+    background: #BC2330;
+    border-radius: 100px;
+    padding: 18px 32px;
+    color: #fff;
+    border: none;
+    i{
+        margin-right: 10px;
+    }
+    @media (max-width: 768px) {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+.content-detail{
+    padding: 80px 0;
+    .box-content-detail{
+        .title-article-detail{
+            color: #E5AE35;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        .box-time-course{
+            span{
+                color: #6B6B6B;
+                font-family: HelveticaNeue-Bold;
+            }
+        }
+    }
+}
+.content-list-course{
+    background: #FFECCA;
+    padding: 80px 0;
+    .title-content-list-course{
+        color: #E5AE35;
+        font-size: 36px;
+        margin-bottom: 45px;
+        @media (max-width: 768px) {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    .tab-content-program{
+        margin-bottom: 48px;
+        #myTab{
+            border: none;
+            li{
+                border: none;
+                .nav-link{
+                    background: none;
+                    border-top: 5px solid #ffecca;
+                    font-size: 18px;
+                    color: #6B6B6B;
+                    padding: 30px 24px;
+                    font-family: HelveticaNeue-Bold;
+                    @media (max-width: 768px) {
+                        padding: 10px 10px;
+                        font-size: 14px;
+                        width: 70px;
+                    }
+                }
+                .active{
+                    border-top: 5px solid #E5AE35;
+                    background: #fff;
+                    color: #BC2330;
+                }
+            }
+        }
+        #myTabContent{
+            background: #fff;
+            padding: 48px;
+        }
+    }
+    .btn-under-content{
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+}
+.other-course{
+    padding: 80px 0;
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
+    .title-other-course{
+        color: #E5AE35;
+        font-size: 36px;
+        margin-bottom: 45px;
+        @media (max-width: 768px) {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    .box-course{
+        border-radius: 10px;
+        overflow: hidden;
+        background: url("../images/bg-box.png") no-repeat bottom;
+        box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.06);
+        margin-bottom: 32px;
+        .img-new-home{
+            overflow: hidden;
+            display: block;
+        }
+        .box-course-under{
+            padding: 32px;
+            .title-new{
+                font-size: 20px;
+                color: #E5AE35;
+                margin-bottom: 24px;
+            }
+            .description-news{
+                max-height: 72px;
+                overflow: hidden;
+                margin-bottom: 24px;
+            }
+            .price-course{
+                .price-detail{
+                    font-size: 20px;
+                    color: #6B6B6B;
+                    font-family: HelveticaNeue-Bold;
+                }
+                .price-new{
+                    text-decoration: line-through;
+                    color: #AFAFAF;
+                }
+                .show-detail{
+                    color: #BC2330;
+                    font-size: 14px;
+                    text-decoration: none;
+                }
+            }
+        }
+        &:hover{
+            .box-course-under{
+                .title-new{
+                    color: #fff;
+                }
+                .description-news{
+                }
+                .price-course{
+                    .price-detail{
+                        color: #fff;
+                    }
+                    .price-new{
+                        color: #fff;
+                    }
+                    .show-detail{
+                        color: #E5AE35;
+                    }
+                }
+            }
+        }
+    }
+}
+#exampleModal{
+    .modal-content{
+        .title-register{
+            color: #E5AE35;
+            font-size: 48px;
+            font-family: HelveticaNeue-Bold;
+            margin-bottom: 30px;
+        }
+        .btn-close{
+            right: 15px;
+            top: 15px;
+        }
+        .content-order-course{
+            .title-left-popup{
+                color: #6B6B6B;
+                font-size: 24px;
+                font-family: HelveticaNeue-Bold;
+                margin-bottom: 20px;
+            }
+            .box-list-course{
+                margin-bottom: 40px;
+                .item-course{
+                    position: relative;
+                    .course-select{
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                    }
+                    img{
+                        border-radius: 10px;
+                    }
+                    .title-course-re{
+                        color: #E5AE35;
+                        font-family: HelveticaNeue-Bold;
+                        margin-bottom: 5px;
+                    }
+                    .price-course-popup{
+                        color: #6B6B6B;
+                        font-family: HelveticaNeue-Bold;
+                        margin-bottom: 5px;
+                    }
+                    .price-old-course-popup{
+                        text-decoration: line-through;
+                        color: #AFAFAF;
+                        font-size: 14px;
+                        margin-bottom: 0;
+                    }
+                    &:hover, &.active{
+                        img{
+                            border: 1px solid #BC2330;
+                        }
+                        .title-course-re{
+                            color: #BC2330;
+                        }
+                    }
+                }
+
+            }
+            .total-payment{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .title-total{
+                    color: #7F7F7F;
+                }
+                .total-price-order{
+                    color: #BC2330;
+                    font-size: 20px;
+                    font-family: HelveticaNeue-Bold;
+                }
+            }
+            .summary-for-popup{
+                color: #6B6B6B;
+            }
+            .form-in-detail-course{
+                .top-form{
+                    input,textarea{
+                        border: 1px solid var(--neutral-neutral-5, #DBD9D9);
+                        border-radius: 100px;
+                        padding: 12px 20px;
+                        margin-bottom: 15px;
+                    }
+                }
+                .box-payment{
+                    padding: 10px 30px;
+                    border: 1px solid #BC2330;
+                    border-radius: 24px;
+                    margin-bottom: 30px;
+                    img{
+                        margin-right: 10px;
+                    }
+                    .text-for-payment{
+                        font-size: 14px;
+                        color: #6B6B6B;
+                    }
+                }
+                .submit-form-popup{
+                    background: #BC2330;
+                    border-radius: 100px;
+                    padding: 12px 20px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

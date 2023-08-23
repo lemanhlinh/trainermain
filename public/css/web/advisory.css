@@ -1,0 +1,72 @@
+@keyframes mymove {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+}
+.form-advisory {
+  background: url(/images/bg-form.jpg?26304f2314935dbb8ac3560d096b025b) left center no-repeat;
+  padding: 52px 0;
+}
+.form-advisory .register-learn .title-form-add {
+  color: #fff;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  line-height: 55px;
+}
+.form-advisory .register-learn .list-chat-form ul li img {
+  transform: perspective(1px) translateZ(0);
+  animation-name: mymove;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.form-advisory .register-learn .form-home-add input, .form-advisory .register-learn .form-home-add select {
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.56);
+  border: none;
+  margin-bottom: 15px;
+  color: #fff;
+  height: 48px;
+  padding: 10px 25px;
+}
+.form-advisory .register-learn .form-home-add input::-webkit-input-placeholder, .form-advisory .register-learn .form-home-add select::-webkit-input-placeholder {
+  color: #fff;
+}
+.form-advisory .register-learn .form-home-add select:required:invalid {
+  color: #fff;
+}
+.form-advisory .register-learn .form-home-add option[value=""][disabled] {
+  display: none;
+}
+.form-advisory .register-learn .form-home-add option {
+  color: #fff;
+}
+.form-advisory .register-learn .form-home-add input[type=number]::-webkit-inner-spin-button,
+.form-advisory .register-learn .form-home-add input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.form-advisory .register-learn .form-home-add .submit-form-home {
+  border-radius: 100px;
+  border: none;
+  color: #fff;
+  height: 56px;
+  text-transform: uppercase;
+  font-family: HelveticaNeue-Bold;
+  background: #BC2330;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  animation-name: mymove;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.form-advisory .register-learn .form-home-add .submit-form-home i {
+  margin-left: 10px;
+}

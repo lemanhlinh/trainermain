@@ -1,0 +1,36 @@
+.content-home-test{
+    background: #F5F5F7;
+    padding: 80px 0;
+    .title-top-home{
+        margin-bottom: 40px;
+        .title-home-test{
+            color: #E5AE35;
+            margin-bottom: 40px;
+            font-size: 48px;
+        }
+    }
+    .content-lesson{
+        margin-bottom: 45px;
+        padding: 40px;
+        background: #fff;
+        border-radius: 16px;
+    }
+    .list_action{
+        text-align: center;
+        a{
+            padding: 14px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-family: HelveticaNeue-Bold;
+            color: #2F2E2E;
+            margin: 0 8px;
+        }
+        .choose_return{
+            background: #fff;
+        }
+        .start_test_online{
+            background: #BC2330;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,286 @@
+.top-content-news .banner-home-course {
+  background: #FFECCA;
+  padding: 80px 0;
+}
+@media (max-width: 768px) {
+  .top-content-news .banner-home-course {
+    padding: 40px 0;
+  }
+}
+.top-content-news .banner-home-course img {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.top-content-news .banner-home-course .title-course {
+  color: #E5AE35;
+  font-size: 44px;
+  margin-bottom: 45px;
+}
+@media (max-width: 768px) {
+  .top-content-news .banner-home-course .title-course {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+.top-content-news .banner-home-course .price-course {
+  margin-bottom: 45px;
+  color: #BC2330;
+  font-size: 44px;
+  font-family: HelveticaNeue-Bold;
+}
+@media (max-width: 768px) {
+  .top-content-news .banner-home-course .price-course {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+.btn-course {
+  background: #BC2330;
+  border-radius: 100px;
+  padding: 18px 32px;
+  color: #fff;
+  border: none;
+}
+.btn-course i {
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .btn-course {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.content-detail {
+  padding: 80px 0;
+}
+.content-detail .box-content-detail .title-article-detail {
+  color: #E5AE35;
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+.content-detail .box-content-detail .box-time-course span {
+  color: #6B6B6B;
+  font-family: HelveticaNeue-Bold;
+}
+
+.content-list-course {
+  background: #FFECCA;
+  padding: 80px 0;
+}
+.content-list-course .title-content-list-course {
+  color: #E5AE35;
+  font-size: 36px;
+  margin-bottom: 45px;
+}
+@media (max-width: 768px) {
+  .content-list-course .title-content-list-course {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+.content-list-course .tab-content-program {
+  margin-bottom: 48px;
+}
+.content-list-course .tab-content-program #myTab {
+  border: none;
+}
+.content-list-course .tab-content-program #myTab li {
+  border: none;
+}
+.content-list-course .tab-content-program #myTab li .nav-link {
+  background: none;
+  border-top: 5px solid #ffecca;
+  font-size: 18px;
+  color: #6B6B6B;
+  padding: 30px 24px;
+  font-family: HelveticaNeue-Bold;
+}
+@media (max-width: 768px) {
+  .content-list-course .tab-content-program #myTab li .nav-link {
+    padding: 10px 10px;
+    font-size: 14px;
+    width: 70px;
+  }
+}
+.content-list-course .tab-content-program #myTab li .active {
+  border-top: 5px solid #E5AE35;
+  background: #fff;
+  color: #BC2330;
+}
+.content-list-course .tab-content-program #myTabContent {
+  background: #fff;
+  padding: 48px;
+}
+.content-list-course .btn-under-content {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.other-course {
+  padding: 80px 0;
+}
+@media (max-width: 768px) {
+  .other-course {
+    padding: 40px 0;
+  }
+}
+.other-course .title-other-course {
+  color: #E5AE35;
+  font-size: 36px;
+  margin-bottom: 45px;
+}
+@media (max-width: 768px) {
+  .other-course .title-other-course {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+.other-course .box-course {
+  border-radius: 10px;
+  overflow: hidden;
+  background: url(/images/bg-box.png?7fad9cf049ff26381a324eab7b89f4a2) no-repeat bottom;
+  box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.06);
+  margin-bottom: 32px;
+}
+.other-course .box-course .img-new-home {
+  overflow: hidden;
+  display: block;
+}
+.other-course .box-course .box-course-under {
+  padding: 32px;
+}
+.other-course .box-course .box-course-under .title-new {
+  font-size: 20px;
+  color: #E5AE35;
+  margin-bottom: 24px;
+}
+.other-course .box-course .box-course-under .description-news {
+  max-height: 72px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.other-course .box-course .box-course-under .price-course .price-detail {
+  font-size: 20px;
+  color: #6B6B6B;
+  font-family: HelveticaNeue-Bold;
+}
+.other-course .box-course .box-course-under .price-course .price-new {
+  text-decoration: line-through;
+  color: #AFAFAF;
+}
+.other-course .box-course .box-course-under .price-course .show-detail {
+  color: #BC2330;
+  font-size: 14px;
+  text-decoration: none;
+}
+.other-course .box-course:hover .box-course-under .title-new {
+  color: #fff;
+}
+.other-course .box-course:hover .box-course-under .price-course .price-detail {
+  color: #fff;
+}
+.other-course .box-course:hover .box-course-under .price-course .price-new {
+  color: #fff;
+}
+.other-course .box-course:hover .box-course-under .price-course .show-detail {
+  color: #E5AE35;
+}
+
+#exampleModal .modal-content .title-register {
+  color: #E5AE35;
+  font-size: 48px;
+  font-family: HelveticaNeue-Bold;
+  margin-bottom: 30px;
+}
+#exampleModal .modal-content .btn-close {
+  right: 15px;
+  top: 15px;
+}
+#exampleModal .modal-content .content-order-course .title-left-popup {
+  color: #6B6B6B;
+  font-size: 24px;
+  font-family: HelveticaNeue-Bold;
+  margin-bottom: 20px;
+}
+#exampleModal .modal-content .content-order-course .box-list-course {
+  margin-bottom: 40px;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course {
+  position: relative;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course .course-select {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course img {
+  border-radius: 10px;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course .title-course-re {
+  color: #E5AE35;
+  font-family: HelveticaNeue-Bold;
+  margin-bottom: 5px;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course .price-course-popup {
+  color: #6B6B6B;
+  font-family: HelveticaNeue-Bold;
+  margin-bottom: 5px;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course .price-old-course-popup {
+  text-decoration: line-through;
+  color: #AFAFAF;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course:hover img, #exampleModal .modal-content .content-order-course .box-list-course .item-course.active img {
+  border: 1px solid #BC2330;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course:hover .title-course-re, #exampleModal .modal-content .content-order-course .box-list-course .item-course.active .title-course-re {
+  color: #BC2330;
+}
+#exampleModal .modal-content .content-order-course .total-payment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#exampleModal .modal-content .content-order-course .total-payment .title-total {
+  color: #7F7F7F;
+}
+#exampleModal .modal-content .content-order-course .total-payment .total-price-order {
+  color: #BC2330;
+  font-size: 20px;
+  font-family: HelveticaNeue-Bold;
+}
+#exampleModal .modal-content .content-order-course .summary-for-popup {
+  color: #6B6B6B;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .top-form input, #exampleModal .modal-content .content-order-course .form-in-detail-course .top-form textarea {
+  border: 1px solid var(--neutral-neutral-5, #DBD9D9);
+  border-radius: 100px;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .box-payment {
+  padding: 10px 30px;
+  border: 1px solid #BC2330;
+  border-radius: 24px;
+  margin-bottom: 30px;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .box-payment img {
+  margin-right: 10px;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .box-payment .text-for-payment {
+  font-size: 14px;
+  color: #6B6B6B;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .submit-form-popup {
+  background: #BC2330;
+  border-radius: 100px;
+  padding: 12px 20px;
+  color: #fff;
+}

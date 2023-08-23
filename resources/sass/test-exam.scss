@@ -1,0 +1,177 @@
+.content-home-test{
+    background: #F5F5F7;
+    .box-top-test{
+        border-radius: 16px;
+        background: #fff;
+        padding: 24px;
+        margin-bottom: 24px;
+        p{
+            color: #6B6B6B;
+            i{
+
+            }
+        }
+        .title-count-down{
+            color: #6B6B6B;
+            font-family: HelveticaNeue-Bold;
+            margin-bottom: 5px;
+        }
+        .time-count-down{
+            font-size: 32px;
+            color: #BC2330;
+            font-family: HelveticaNeue-Bold;
+        }
+    }
+    .box-center-test{
+        border-radius: 16px;
+        background: #fff;
+        padding: 24px;
+        padding-bottom: 0;
+        margin-bottom: 24px;
+        .title-ielt-quick{
+            font-family: HelveticaNeue-Bold;
+            color: #6B6B6B;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        ul{
+            li{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: #6B6B6B;
+                padding: 15px 0;
+                border-top: 1px solid #E5E5E7;
+                span{
+                    font-family: HelveticaNeue-Bold;
+                }
+            }
+        }
+    }
+    .box-under-test{
+        border-radius: 16px;
+        background: #fff;
+        padding: 24px;
+        margin-bottom: 24px;
+        button{
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            border-radius: 100px;
+            text-align: center;
+            font-family: HelveticaNeue-Bold;
+            font-size: 14px;
+        }
+        .btn-send-exam{
+            margin-bottom: 16px;
+            background: #BC2330;
+            color: #fff;
+            border-radius: 100px;
+            padding: 10px 0;
+        }
+        .btn-out-exam{
+        }
+    }
+    .content-question{
+        border-radius: 16px;
+        background: #fff;
+        padding: 24px;
+        margin-bottom: 24px;
+        .number-question{
+            color: #BC2330;
+            font-family: HelveticaNeue-Bold;
+        }
+        .title-question{
+            color: #6B6B6B;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        ul{
+            li{
+                color: #6B6B6B;
+                font-size: 14px;
+                margin-bottom: 20px;
+                label{
+                    display: flex;
+                    align-items: center;
+                    input{
+                        margin-right: 10px;
+                    }
+                    span{
+                        margin-left: 10px;
+                    }
+                }
+                .content-fill-input{
+                    align-items: flex-end;
+                    display: block;
+                    .title-question{
+                        display: inline-block;
+                        margin: 0;
+                    }
+                    input{
+                        border: none;
+                        border-bottom: 1px solid #ccc;
+                        &:focus, &:focus-visible{
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .next-question{
+        text-align: right;
+        margin-bottom: 24px;
+        .btn-next-question{
+            background: #BC2330;
+            text-align: center;
+            color: #fff;
+            padding: 10px 20px;
+            font-family: HelveticaNeue-Bold;
+            border-radius: 100px;
+            i{
+                margin-left: 7px;
+            }
+        }
+    }
+    .list-question{
+        margin-bottom: 24px;
+        padding: 0;
+        li{
+            padding: 10px;
+            border-radius: 8px;
+            margin: 0 4px 8px;
+            border: 1px solid #AFAFAF;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            width: 100px;
+            span{
+                margin-right: 5px;
+            }
+        }
+        .active{
+            border: 1px solid #BC2330;
+            color: #BC2330;
+        }
+    }
+    .list-comment{
+        ul{
+            li{
+                color: #6B6B6B;
+                font-size: 14px;
+                margin-bottom: 20px;
+                display: inline-block;
+                margin-right: 20px;
+                i{
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+}

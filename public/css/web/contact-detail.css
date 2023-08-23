@@ -1,0 +1,84 @@
+.content-detail {
+  padding: 80px 0;
+}
+.content-detail .title-contact {
+  color: #E5AE35;
+  font-size: 48px;
+}
+.content-detail .title-form-contact {
+  color: #6B6B6B;
+  font-size: 24px;
+}
+.content-detail .des-form-contact {
+  color: #6B6B6B;
+}
+.content-detail .form-contact input, .content-detail .form-contact select, .content-detail .form-contact textarea {
+  border: none;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #6B6B6B;
+  background: none;
+  height: 48px;
+}
+.content-detail .form-contact input::-webkit-input-placeholder, .content-detail .form-contact select::-webkit-input-placeholder, .content-detail .form-contact textarea::-webkit-input-placeholder {
+  color: #AFAFAF;
+}
+.content-detail .form-contact input[type=number]::-webkit-inner-spin-button,
+.content-detail .form-contact input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.content-detail .form-contact textarea {
+  height: unset;
+}
+.content-detail .form-contact .submit-form-contact {
+  border-radius: 100px;
+  background: #BC2330;
+  box-shadow: 12px 12px 56px 0px rgba(188, 35, 48, 0.12);
+  color: #fff;
+  padding: 10px 24px;
+}
+.content-detail .box-contact {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 48px 0px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.content-detail .box-contact .info-box {
+  list-style: none;
+  color: #7F7F7F;
+  margin-bottom: 0;
+}
+.content-detail .box-contact .info-box li:first-child {
+  font-size: 20px;
+}
+.content-detail .box-contact .info-box li:first-child span {
+  font-family: HelveticaNeue-Bold;
+}
+.content-detail .box-contact .info-box .color-other-contact {
+  color: #BC2330;
+}
+
+.content-detail-bottom {
+  color: #6B6B6B;
+  margin-bottom: 80px;
+}
+.content-detail-bottom .title-bottom-contact {
+  font-size: 36px;
+  font-family: HelveticaNeue-Bold;
+  color: #E5AE35;
+  margin-bottom: 48px;
+}
+.content-detail-bottom h3 {
+  font-size: 20px;
+}
+.content-detail-bottom h3:after {
+  content: "";
+  background: #BC2330;
+  height: 1px;
+  width: 70px;
+  display: block;
+  margin: 14px 0;
+}
