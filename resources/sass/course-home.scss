@@ -376,7 +376,7 @@
             color: #E5AE35;
             font-size: 36px;
             text-transform: uppercase;
-            margin-bottom: 45px;
+            margin-bottom: 15px;
             line-height: 55px;
             @media (max-width: 768px) {
                 font-size: 24px;
@@ -384,6 +384,19 @@
                 text-align: center;
                 br{
                     display: none;
+                }
+            }
+        }
+        .list-chat-form{
+            ul{
+                li{
+                    img{
+                        transform: perspective(1px) translateZ(0);
+                        animation-name: mymove;
+                        animation-duration: 1.5s;
+                        animation-timing-function: linear;
+                        animation-iteration-count: infinite;
+                    }
                 }
             }
         }
