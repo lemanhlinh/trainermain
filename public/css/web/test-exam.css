@@ -86,6 +86,7 @@
   color: #6B6B6B;
   font-size: 14px;
   margin-bottom: 20px;
+  list-style: none;
 }
 .content-home-test .content-question ul li label {
   display: flex;

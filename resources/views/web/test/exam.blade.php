@@ -33,42 +33,112 @@
                 <div class="col-md-8">
                     <div class="content-question">
                         <div v-for="(question, questionIndex) in questions" :key="questionIndex" >
-                            <div v-if="questionIndex === selectedQuestion">
+                            <div v-if="questionIndex === selectedQuestion" class="ck-content">
                                 <p class="number-question">Câu hỏi @{{ questionIndex + 1 }}:</p>
-                                <p class="title-question" v-if="question.type_id == 1" v-html="question.content"></p>
-                                <ul class="list-unstyled">
-                                    <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
-                                        <label v-if="question.type_id == 1">
-                                            <input
-                                                :type="getInputType(question)"
-                                                :name="'question_' + questionIndex"
-                                                v-model="selectedAnswers[questionIndex]"
-                                                :value="answer.id"
-                                                @change="updateHasAnswer(questionIndex)"
-                                                :disabled="isSubmitting">
-                                            @{{ answer.content_answer }}
-                                            <span v-if="showResult">
-                                                <i v-if="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
-                                                <i v-else class="fas fa-times-circle text-danger"></i>
-                                            </span>
-                                        </label>
-                                        <label v-else class="content-fill-input">
-                                            <p class="title-question" v-if="question.type_id == 2" v-html="processedStringFi(question.content)"></p>
-                                            <input
-                                                :type="getInputType(question)"
-                                                :name="'question_' + questionIndex"
-                                                v-model="selectedAnswers[questionIndex]"
-                                                @change="updateHasAnswer(questionIndex)"
-                                                :disabled="isSubmitting">
-                                            <p class="title-question" v-if="question.type_id == 2" v-html="processedStringAf(question.content)"></p>
-                                            <p v-if="showResult" class="ms-4">
+                                <div v-if="question.type_id == 1">
+                                    <p class="title-question" v-html="question.content"></p>
+                                    <ul class="list-unstyled">
+                                        <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    :name="'question_' + questionIndex"
+                                                    v-model="selectedAnswers[questionIndex]"
+                                                    :value="answer.id"
+                                                    @change="updateHasAnswer(questionIndex)"
+                                                    :disabled="isSubmitting">
                                                 @{{ answer.content_answer }}
-                                                <i v-if="checkSingleAnswer(questionIndex,answer.id)" :data="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
-                                                <i v-else class="fas fa-times-circle text-danger"></i>
-                                            </p>
-                                        </label>
-                                    </li>
-                                </ul>
+                                                <span v-if="showResult">
+                                                    <i v-if="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
+                                                    <i v-else class="fas fa-times-circle text-danger"></i>
+                                                </span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-else-if="question.type_id == 2">
+                                    <ul class="list-unstyled">
+                                        <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
+                                            <label class="content-fill-input">
+                                                <p class="title-question" v-if="question.type_id == 2" v-html="processedStringFi(question.content)"></p>
+                                                <input
+                                                    type="text"
+                                                    :name="'question_' + questionIndex"
+                                                    v-model="selectedAnswers[questionIndex]"
+                                                    @change="updateHasAnswer(questionIndex)"
+                                                    :disabled="isSubmitting">
+                                                <p class="title-question" v-if="question.type_id == 2" v-html="processedStringAf(question.content)"></p>
+                                                <p v-if="showResult" class="ms-4">
+                                                    @{{ answer.content_answer }}
+                                                    <i v-if="checkSingleAnswer(questionIndex,answer.id)" :data="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
+                                                    <i v-else class="fas fa-times-circle text-danger"></i>
+                                                </p>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-else-if="question.type_id == 3">
+                                    <p class="title-question" v-html="question.content"></p>
+                                    <ul class="list-unstyled">
+                                        <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    :name="'question_' + questionIndex"
+                                                    v-model="selectedAnswers[questionIndex]"
+                                                    :value="answer.id"
+                                                    @change="updateHasAnswer(questionIndex)"
+                                                    :disabled="isSubmitting">
+                                                @{{ answer.content_answer }}
+                                                <span v-if="showResult">
+                                                    <i v-if="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
+                                                    <i v-else class="fas fa-times-circle text-danger"></i>
+                                                </span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-else-if="question.type_id == 4">
+                                    <p class="title-question" v-html="question.content"></p>
+                                    <ul class="list-unstyled">
+                                        <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
+                                            <label>
+                                                <input
+                                                    type="checkbox"
+                                                    :name="'question_' + questionIndex"
+                                                    v-model="selectedAnswers[questionIndex]"
+                                                    :value="answer.id"
+                                                    @change="updateHasAnswer(questionIndex)"
+                                                    :disabled="isSubmitting">
+                                                @{{ answer.content_answer }}
+                                                <span v-if="showResult">
+                                                    <i v-if="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
+                                                    <i v-else class="fas fa-times-circle text-danger"></i>
+                                                </span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-else>
+                                    <p class="title-question" v-html="question.content"></p>
+                                    <ul class="list-unstyled">
+                                        <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
+                                            <label>
+                                                <input
+                                                    type="text"
+                                                    :name="'question_' + questionIndex"
+                                                    v-model="selectedAnswers[questionIndex]"
+                                                    @change="updateHasAnswer(questionIndex)"
+                                                    :disabled="isSubmitting">
+                                                <span v-if="showResult">
+                                                    @{{ answer.content_answer }}
+                                                    <i v-if="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
+                                                    <i v-else class="fas fa-times-circle text-danger"></i>
+                                                </span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -76,7 +146,7 @@
                         <button @click="goToNextQuestion" :disabled="selectedQuestion === questions.length - 1 || isSubmitting" class="btn btn-next-question">Câu kế tiếp <i class="fas fa-caret-right"></i></button>
                     </div>
                     <ul class="list-question" >
-                        <li class="list-unstyled"  v-for="(question, index) in questions" :key="index" @click="showAnswer(index)" :class="showResult ? checkAnswer(index) ? 'bg-warning' : 'bg-danger' : (selectedQuestion === index ? 'active' : '')">
+                        <li class="list-unstyled" v-for="(question, index) in questions" :key="index" @click="showAnswer(index)" :class="showResult ? checkAnswer(index) ? 'bg-warning' : 'bg-danger' : (selectedQuestion === index ? 'active' : '')">
                             <span v-if="showResult">
                                 <i v-if="checkAnswer(index)" class="fas fa-check-circle text-white"></i>
                                 <i v-else class="fas fa-times-circle text-white"></i>
@@ -102,6 +172,7 @@
 @section('link')
     @parent
     <link rel="stylesheet" href="{{ asset('/css/web/test-exam.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/content-ckeditor.css') }}">
 @endsection
 
 @section('script')
@@ -166,14 +237,6 @@
                 },
                 updateHasAnswer(questionIndex) {
                     this.hasAnswer[questionIndex] = true;
-                },
-                getInputType(question) {
-                    if(question.type_id === 1){
-                        return question.question_item_test.filter(answer => answer.answer === 1).length > 1 ? 'checkbox' : 'radio';
-                    }else{
-                        return 'text';
-                    }
-
                 },
                 initSelectedAnswers() {
                     // Kiểm tra nếu questions không được định nghĩa hoặc là một mảng rỗng, thì trả về một mảng rỗng
