@@ -10,8 +10,8 @@
                             Hoàn thành mục tiêu IELTS ngay bây giờ!</h1>
                         <div class="mb-4 list-chat-form">
                             <ul class="list-unstyled bg-white p-3 rounded d-flex justify-content-between align-items-center">
-                                <li class="d-flex"><img src="{{ asset('images/mobile/facebook.png') }}" alt="Nhắn tin qua Facebook" class="img-fluid me-2"><a href="{{ $setting['link_mess_facebook'] }}" target="_blank">Nhắn tin qua Facebook</a></li>
-                                <li class="d-flex"><img src="{{ asset('images/mobile/zalo.png') }}" alt="Nhắn tin qua Zalo" class="img-fluid me-2"><a href="https://zalo.me/{{ $setting['phone_zalo'] }}">Nhắn tin qua Zalo</a></li>
+                                <li class="d-flex align-items-center"><img src="{{ asset('images/mobile/facebook.png') }}" alt="Nhắn tin qua Facebook" class="img-fluid me-2"><a href="{{ $setting['link_mess_facebook'] }}" target="_blank">Nhắn tin qua Facebook</a></li>
+                                <li class="d-flex align-items-center"><img src="{{ asset('images/mobile/zalo.png') }}" alt="Nhắn tin qua Zalo" class="img-fluid me-2"><a href="https://zalo.me/{{ $setting['phone_zalo'] }}">Nhắn tin qua Zalo</a></li>
                             </ul>
                         </div>
                         <form action="{{ route('detailAdvisoryStore') }}" class="form-home-add" name="form-advisory" id="form-advisory" method="post">
