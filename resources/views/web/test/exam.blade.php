@@ -127,7 +127,7 @@
                                                 <input
                                                     type="text"
                                                     :name="'question_' + questionIndex"
-                                                    v-model="selectedAnswers[questionIndex]"
+                                                    v-model="selectedAnswers[answerIndex]"
                                                     @change="updateHasAnswer(questionIndex)"
                                                     :disabled="isSubmitting">
                                                 <span v-if="showResult">

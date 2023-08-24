@@ -9,8 +9,8 @@
                         <h1 class="title-form-add">Nhận tư vấn MIỄN PHÍ<br>
                             Hoàn thành mục tiêu IELTS ngay bây giờ!</h1>
                         <div class="mb-4 list-chat-form">
-                            <ul class="list-unstyled bg-white p-3 rounded d-flex justify-content-between">
-                                <li class="d-flex"><img src="{{ asset('images/mobile/facebook.png') }}" alt="Nhắn tin qua Facebook" class="img-fluid me-2"><a href="{{ $setting['link_facebook'] }}" target="_blank">Nhắn tin qua Facebook</a></li>
+                            <ul class="list-unstyled bg-white p-3 rounded d-flex justify-content-between align-items-center">
+                                <li class="d-flex"><img src="{{ asset('images/mobile/facebook.png') }}" alt="Nhắn tin qua Facebook" class="img-fluid me-2"><a href="{{ $setting['link_mess_facebook'] }}" target="_blank">Nhắn tin qua Facebook</a></li>
                                 <li class="d-flex"><img src="{{ asset('images/mobile/zalo.png') }}" alt="Nhắn tin qua Zalo" class="img-fluid me-2"><a href="https://zalo.me/{{ $setting['phone_zalo'] }}">Nhắn tin qua Zalo</a></li>
                             </ul>
                         </div>
