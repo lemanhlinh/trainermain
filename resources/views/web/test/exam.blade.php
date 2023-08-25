@@ -131,11 +131,11 @@
                                             <td class="">
                                                 <select
                                                     :name="'question_' + questionIndex"
-                                                    v-model="selectedAnswers[questionIndex][answerIndex]"
+                                                    v-model="selectedAnswers[questionIndex][answer.id]"
                                                     @change="updateHasAnswer(questionIndex)"
                                                     :disabled="isSubmitting">
                                                     <option value="" disabled selected>Chọn đáp án</option>
-                                                    <option v-for="(option, optionIndex) in ['a', 'b', 'c', 'd']" :key="optionIndex" :value="option">@{{ option }}</option>
+                                                    <option v-for="(option, optionIndex) in ['a', 'b', 'c', 'd']" :key="optionIndex" :value="option" >@{{ option }}</option>
                                                 </select>
                                                 <span v-if="showResult" class="ms-2">
                                                     <i v-if="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
@@ -270,7 +270,7 @@
                             // Nếu không có đáp án chính xác, so sánh với đáp án người dùng nhập vào
                             return this.selectedAnswers[questionIndex].toString().toLowerCase() === this.questions[questionIndex].question_item_test[0].content_answer.toLowerCase();
                         } else if (this.questions[questionIndex].type_id === 5) {
-                            console.log(this.selectedAnswers[questionIndex]);
+                            //chưa so sánh được
                             return this.selectedAnswers[questionIndex].toString().toLowerCase() === this.questions[questionIndex].question_item_test[0].content_answer.toLowerCase();
                         } else {
                             // Nếu có đáp án chính xác, so sánh với đáp án đã chọn
