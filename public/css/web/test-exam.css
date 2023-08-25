@@ -113,6 +113,12 @@
 .content-home-test .content-question ul li .content-fill-input input:focus, .content-home-test .content-question ul li .content-fill-input input:focus-visible {
   border: none;
 }
+.content-home-test .content-question .list-true-multi span {
+  margin-right: 3px;
+}
+.content-home-test .content-question .list-true-multi span:last-child i {
+  display: none;
+}
 .content-home-test .next-question {
   text-align: right;
   margin-bottom: 24px;

@@ -62,6 +62,7 @@
                                             <label class="content-fill-input">
                                                 <p class="title-question" v-if="question.type_id == 2" v-html="processedStringFi(question.content)"></p>
                                                 <input
+                                                    class="text-center"
                                                     type="text"
                                                     :name="'question_' + questionIndex"
                                                     v-model="selectedAnswers[questionIndex]"
@@ -121,23 +122,31 @@
                                 </div>
                                 <div v-else>
                                     <p class="title-question" v-html="question.content"></p>
-                                    <ul class="list-unstyled">
-                                        <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
-                                            <label>
-                                                <input
-                                                    type="text"
+                                    <table>
+                                        <tr v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex" class="">
+                                            <td>
+                                                <span>@{{ answer.content_answer }}</span>
+                                            </td>
+                                            <td class="mx-3 d-block">-</td>
+                                            <td class="">
+                                                <select
                                                     :name="'question_' + questionIndex"
-                                                    v-model="selectedAnswers[answerIndex]"
+                                                    v-model="selectedAnswers[questionIndex][answerIndex]"
                                                     @change="updateHasAnswer(questionIndex)"
                                                     :disabled="isSubmitting">
-                                                <span v-if="showResult">
-                                                    @{{ answer.content_answer }}
+                                                    <option value="" disabled selected>Chọn đáp án</option>
+                                                    <option v-for="(option, optionIndex) in ['a', 'b', 'c', 'd']" :key="optionIndex" :value="option">@{{ option }}</option>
+                                                </select>
+                                                <span v-if="showResult" class="ms-2">
                                                     <i v-if="checkSingleAnswer(questionIndex,answer.id)" class="fas fa-check-circle text-success"></i>
                                                     <i v-else class="fas fa-times-circle text-danger"></i>
                                                 </span>
-                                            </label>
-                                        </li>
-                                    </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div v-if="showResult" class="mt-4 list-true-multi">
+                                        Đáp án đúng lần lượt: <span v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">@{{ answer.content_answer }}<i>,</i> </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +259,6 @@
                         selectedAnswers.push([]);
                     });
 
-
                     return selectedAnswers;
                 },
 
@@ -260,6 +268,9 @@
                         .map(answer => answer.id);
                         if (this.questions[questionIndex].type_id === 2) {
                             // Nếu không có đáp án chính xác, so sánh với đáp án người dùng nhập vào
+                            return this.selectedAnswers[questionIndex].toString().toLowerCase() === this.questions[questionIndex].question_item_test[0].content_answer.toLowerCase();
+                        } else if (this.questions[questionIndex].type_id === 5) {
+                            console.log(this.selectedAnswers[questionIndex]);
                             return this.selectedAnswers[questionIndex].toString().toLowerCase() === this.questions[questionIndex].question_item_test[0].content_answer.toLowerCase();
                         } else {
                             // Nếu có đáp án chính xác, so sánh với đáp án đã chọn
@@ -274,15 +285,17 @@
                         .map(answer => answer.id);
                     // Chuyển đổi selectedAnswerIds thành một mảng nếu không phải là mảng
                     const selectedIdsArray = Array.isArray(selectedAnswerIds) ? selectedAnswerIds : [selectedAnswerIds];
+
                     // Chuyển đổi correctAnswerIds thành một mảng nếu không phải là mảng
-                    const correctIdsArray = Array.isArray(correctAnswerIds) ? correctAnswerIds : [correctAnswerIds];
+                    let correctIdsArray = Array.isArray(correctAnswerIds) ? correctAnswerIds : [correctAnswerIds];
                     // Kiểm tra hai mảng đã sắp xếp có bằng nhau không
-                    if (this.questions[this.selectedQuestion].type_id === 2) {
-                        const correctIdsArray =  [this.questions[this.selectedQuestion].question_item_test[0].content_answer.toLowerCase()];
+                    if (this.questions[this.selectedQuestion].type_id == 2) {
+                        correctIdsArray =  [this.questions[this.selectedQuestion].question_item_test[0].content_answer.toLowerCase()];
                     }else{
                         // Chuyển đổi correctAnswerIds thành một mảng nếu không phải là mảng
-                        const correctIdsArray = Array.isArray(correctAnswerIds) ? correctAnswerIds : [correctAnswerIds];
+                        correctIdsArray = Array.isArray(correctAnswerIds) ? correctAnswerIds : [correctAnswerIds];
                     }
+
                     return this.arrayEquals(selectedIdsArray, correctIdsArray);
                 },
                 submitExam() {
@@ -309,7 +322,6 @@
                         time_start: this.startTime.toISOString().slice(0, 19).replace('T', ' '),
                         time_end: this.submitTime.toISOString().slice(0, 19).replace('T', ' '),
                     };
-                    console.log(examResultEdit);
                     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                     // Gửi yêu cầu POST đến API
                     fetch('{{ route('saveTest',$member_test->id) }}', {
@@ -379,6 +391,6 @@
                 // Trước khi component bị hủy, dừng đếm thời gian
                 this.stopTimer();
             },
-        }).mount('#app-test')
+        }).mount('#app-test');
     </script>
 @endsection

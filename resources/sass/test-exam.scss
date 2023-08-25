@@ -120,6 +120,16 @@
                 }
             }
         }
+        .list-true-multi{
+            span{
+                margin-right: 3px;
+                &:last-child{
+                    i{
+                        display: none;
+                    }
+                }
+            }
+        }
     }
     .next-question{
         text-align: right;
