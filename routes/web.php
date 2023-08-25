@@ -268,6 +268,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], fu
         Route::post('/destroy/{id}', 'DocumentController@destroy')->name('destroy')->middleware('permission:delete_document');
         Route::post('/change-active-document/{id}', 'DocumentController@changeActive')->name('changeActive')->middleware('permission:edit_document');
     });
+
+    Route::group(['prefix' => 'document-download', 'as' => 'document-download.', 'middleware' => ['permission:view_document_download']], function () {
+        Route::get('', 'DocumentDownloadController@index')->name('index');
+    });
 });
 
 

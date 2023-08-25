@@ -101,16 +101,37 @@
                         </a>
                     </li>
                 @endcan
-                @can('view_document')
-                    <li class="nav-item @if (request()->is('admin/document*')) menu-open @endif">
-                        <a href="{{ route('admin.document.index') }}" class="nav-link @if (request()->is('admin/document*')) active @endif">
-                            <i class="fas fa-file-alt"></i>
-                            <p>
-                                @lang('form.document.')
-                            </p>
-                        </a>
-                    </li>
-                @endcan
+                <li class="nav-item @if (request()->is('admin/document*')) menu-open @endif">
+                    <a href="#" class="nav-link @if (request()->is('admin/document*')) active @endif">
+                        <i class="fas fa-book"></i>
+                        <p>
+                            @lang('form.document.')
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        @can('view_document')
+                            <li class="nav-item">
+                                <a href="{{ route('admin.document.index') }}" class="nav-link @if (request()->is('admin/documents')) active @endif">
+                                    <i class="fas fa-file-alt"></i>
+                                    <p>
+                                        @lang('form.document.')
+                                    </p>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('view_document_download')
+                            <li class="nav-item">
+                                <a href="{{ route('admin.document-download.index') }}" class="nav-link @if (request()->is('admin/document-download')) active @endif">
+                                    <i class="fas fa-address-book"></i>
+                                    <p>
+                                        @lang('form.document_download.')
+                                    </p>
+                                </a>
+                            </li>
+                        @endcan
+                    </ul>
+                </li>
                 @can('view_course')
                     <li class="nav-item @if (request()->is('admin/course*')) menu-open @endif">
                         <a href="{{ route('admin.course.index') }}" class="nav-link @if (request()->is('admin/course*')) active @endif">

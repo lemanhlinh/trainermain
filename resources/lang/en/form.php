@@ -237,6 +237,7 @@ return [
         '' => 'Đơn hàng',
         'full_name' => 'Họ và tên',
         'gender' => 'Giới tính',
+        'where_learn' => 'Nơi học',
         'email' => 'Email',
         'phone' => 'Số điện thoại',
         'address' => 'Địa chỉ',
@@ -307,5 +308,11 @@ return [
         'create' => 'Tạo tin tức',
         'update' => 'Sửa tin tức',
         'ordering' => 'Thứ tự'
+    ],
+    'document_download' => [
+        '' => 'Danh sách tải tài liệu',
+        'full_name' => 'Họ và tên',
+        'phone' => 'Số điện thoại',
+        'email' => 'Email',
     ],
 ];

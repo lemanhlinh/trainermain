@@ -141,6 +141,8 @@ class PermissionSeeder extends Seeder
             ['name' => 'create_document', 'display_name' => 'Thêm mới tài liệu', 'guard_name' => 'web'],
             ['name' => 'edit_document', 'display_name' => 'Sửa tài liệu', 'guard_name' => 'web'],
             ['name' => 'delete_document', 'display_name' => 'Xóa tài liệu', 'guard_name' => 'web'],
+
+            ['name' => 'view_document_download', 'display_name' => 'Xem danh sách tải tài liệu', 'guard_name' => 'web'],
         ];
     }
 }

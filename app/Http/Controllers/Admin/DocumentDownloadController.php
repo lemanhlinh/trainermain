@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\DocumentDownload;
 use Illuminate\Http\Request;
+use App\DataTables\DocumentDownloadDataTable;
 
 class DocumentDownloadController extends Controller
 {
@@ -13,9 +14,9 @@ class DocumentDownloadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(DocumentDownloadDataTable $dataTable)
     {
-        //
+        return $dataTable->render('admin.document-download.index');
     }
 
     /**

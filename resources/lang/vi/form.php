@@ -309,4 +309,10 @@ return [
         'update' => 'Sửa tin tức',
         'ordering' => 'Thứ tự'
     ],
+    'document_download' => [
+        '' => 'Danh sách tải tài liệu',
+        'full_name' => 'Họ và tên',
+        'phone' => 'Số điện thoại',
+        'email' => 'Email',
+    ],
 ];
