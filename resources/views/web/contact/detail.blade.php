@@ -45,20 +45,16 @@
         <div class="container">
             <h4 class="title-bottom-contact">Hẹn gặp bạn tại cơ sở IELTS Trainer gần nhất của chúng mình nhé!</h4>
             <div class="row">
+                @forelse($stores as $store)
                 <div class="col-md-6">
                     <h3>Công ty TNHH Giáo dục IELTS Trainer</h3>
                     <ul class="list-unstyled">
-                        <li>Toà nhà HaDo Airport Building, số 2 Hồng Hà, Phường 2, Tân Bình, TP.HCM</li>
-                        <li>Tel: +84-24-37725-119/120 Fax: +84-24-37725-121</li>
+                        <li>{{ $store->title }}</li>
+                        <li>Tel: {{ $store->phone }}</li>
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <h3>Công ty TNHH Giáo dục IELTS Trainer</h3>
-                    <ul class="list-unstyled">
-                        <li>Toà nhà HaDo Airport Building, số 2 Hồng Hà, Phường 2, Tân Bình, TP.HCM</li>
-                        <li>Tel: +84-24-37725-119/120 Fax: +84-24-37725-121</li>
-                    </ul>
-                </div>
+                @empty
+                @endforelse
             </div>
         </div>
     </div>

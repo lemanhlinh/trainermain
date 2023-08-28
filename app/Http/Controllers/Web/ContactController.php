@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
 use App\Models\Setting;
+use App\Models\Store;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\Contact\CreateContact;
@@ -21,7 +22,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('web.contact.detail');
+        $stores = Store::where('active', 1)->get();
+        return view('web.contact.detail', compact('stores'));
     }
 
     /**
