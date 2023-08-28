@@ -20,7 +20,7 @@
                         @include('web.components.image', ['src' => 'images/customer-support.png'])
                         <ul class="info-box">
                             <li>Hotline: <span class="color-other-contact">{{ $setting['hotline'] }}</span></li>
-                            <li>Giờ hỗ trợ: Thứ Hai – Thứ Bảy, 8 giờ sáng đến 6 giờ chiều</li>
+                            <li>Giờ hỗ trợ: {{ $setting['time_work_contact'] }}</li>
                         </ul>
                     </div>
                     <div class="box-contact">
@@ -33,8 +33,8 @@
                     <div class="box-contact">
                         @include('web.components.image', ['src' => 'images/link-contact3.png'])
                         <ul class="info-box">
-                            <li>Fanpage: facebook.com/ieltstrainer</li>
-                            <li>Chúng tôi online: Thứ Hai – Thứ Bảy, 8 giờ sáng đến 6 giờ chiều</li>
+                            <li>Fanpage: {{ $setting['link_facebook'] }}</li>
+                            <li>Chúng tôi online: {{ $setting['time_work_contact'] }}</li>
                         </ul>
                     </div>
                 </div>
