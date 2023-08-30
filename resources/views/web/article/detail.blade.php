@@ -13,12 +13,19 @@
                 <div class="col-md-8">
                     <div class="box-content-detail">
                         <h1 class="title-article-detail">{{ $article->title }}</h1>
-                        <p class="time-main-article"><i class="far fa-clock"></i> {{ $article->created_at_format }}</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="time-main-article mb-0"><i class="far fa-clock"></i> {{ $article->created_at_format }}</p>
+                            @include('web.components.share', ['link' => route('detailArticle',['slug'=>$article->slug,'id'=>$article->id]),'title' => $article->title])
+                        </div>
+
                         <div class="show-description">
                             {{ $article->description }}
                         </div>
                         <div class="show-content ck-content">
                             {!! $article->content !!}
+                        </div>
+                        <div class="d-flex my-3">
+                            @include('web.components.share', ['link' => route('detailArticle',['slug'=>$article->slug,'id'=>$article->id]),'title' => $article->title])
                         </div>
                     </div>
                     <div class="content-news-related">
@@ -112,8 +119,17 @@
     @parent
     <link rel="stylesheet" href="{{ asset('/css/web/news-detail.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/content-ckeditor.css') }}">
+    <style>
+        .zalo-share-button{
+            width: 30px !important;
+            height: 30px !important;
+            opacity: 0;
+            position: absolute !important;
+        }
+    </style>
 @endsection
 
 @section('script')
     @parent
+    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
 @endsection
