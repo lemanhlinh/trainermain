@@ -33,7 +33,7 @@
                 <div class="col-md-8">
                     <div class="content-question">
                         <div v-for="(question, questionIndex) in questions" :key="questionIndex" >
-                            <div v-if="questionIndex === selectedQuestion" class="ck-content">
+                            <div v-if="questionIndex == selectedQuestion" class="ck-content">
                                 <p class="number-question">Câu hỏi @{{ questionIndex + 1 }}:</p>
                                 <div v-if="question.type_id == 1">
                                     <p class="title-question" v-html="question.content"></p>
@@ -152,10 +152,10 @@
                         </div>
                     </div>
                     <div class="next-question">
-                        <button @click="goToNextQuestion" :disabled="selectedQuestion === questions.length - 1 || isSubmitting" class="btn btn-next-question">Câu kế tiếp <i class="fas fa-caret-right"></i></button>
+                        <button @click="goToNextQuestion" :disabled="selectedQuestion == questions.length - 1 || isSubmitting" class="btn btn-next-question">Câu kế tiếp <i class="fas fa-caret-right"></i></button>
                     </div>
                     <ul class="list-question" >
-                        <li class="list-unstyled" v-for="(question, index) in questions" :key="index" @click="showAnswer(index)" :class="showResult ? checkAnswer(index) ? 'bg-warning' : 'bg-danger' : (selectedQuestion === index ? 'active' : '')">
+                        <li class="list-unstyled" v-for="(question, index) in questions" :key="index" @click="showAnswer(index)" :class="showResult ? checkAnswer(index) ? 'bg-warning' : 'bg-danger' : (selectedQuestion == index ? 'active' : '')">
                             <span v-if="showResult">
                                 <i v-if="checkAnswer(index)" class="fas fa-check-circle text-white"></i>
                                 <i v-else class="fas fa-times-circle text-white"></i>
@@ -249,7 +249,7 @@
                 },
                 initSelectedAnswers() {
                     // Kiểm tra nếu questions không được định nghĩa hoặc là một mảng rỗng, thì trả về một mảng rỗng
-                    if (!this.questions || this.questions.length === 0) {
+                    if (!this.questions || this.questions.length == 0) {
                         return [];
                     }
 
@@ -264,14 +264,14 @@
 
                 checkSingleAnswer(questionIndex, answerIndex) {
                     const correctAnswerIds = this.questions[questionIndex].question_item_test
-                        .filter(answer => answer.answer === 1)
+                        .filter(answer => answer.answer == 1)
                         .map(answer => answer.id);
-                        if (this.questions[questionIndex].type_id === 2) {
+                        if (this.questions[questionIndex].type_id == 2) {
                             // Nếu không có đáp án chính xác, so sánh với đáp án người dùng nhập vào
-                            return this.selectedAnswers[questionIndex].toString().toLowerCase() === this.questions[questionIndex].question_item_test[0].content_answer.toLowerCase();
-                        } else if (this.questions[questionIndex].type_id === 5) {
+                            return this.selectedAnswers[questionIndex].toString().toLowerCase() == this.questions[questionIndex].question_item_test[0].content_answer.toLowerCase();
+                        } else if (this.questions[questionIndex].type_id == 5) {
                             //chưa so sánh được
-                            return this.selectedAnswers[questionIndex].toString().toLowerCase() === this.questions[questionIndex].question_item_test[0].content_answer.toLowerCase();
+                            return this.selectedAnswers[questionIndex].toString().toLowerCase() == this.questions[questionIndex].question_item_test[0].content_answer.toLowerCase();
                         } else {
                             // Nếu có đáp án chính xác, so sánh với đáp án đã chọn
                             return correctAnswerIds.includes(answerIndex);
@@ -281,7 +281,7 @@
                 checkAnswer(index) {
                     const selectedAnswerIds = this.selectedAnswers[index];
                     const correctAnswerIds = this.questions[index].question_item_test
-                        .filter(answer => answer.answer === 1)
+                        .filter(answer => answer.answer == 1)
                         .map(answer => answer.id);
                     // Chuyển đổi selectedAnswerIds thành một mảng nếu không phải là mảng
                     const selectedIdsArray = Array.isArray(selectedAnswerIds) ? selectedAnswerIds : [selectedAnswerIds];
@@ -352,7 +352,7 @@
                     // So sánh câu trả lời dưới dạng mảng
                     const sortedArr1 = JSON.stringify(arr1.sort());
                     const sortedArr2 = JSON.stringify(arr2.sort());
-                    return sortedArr1 === sortedArr2;
+                    return sortedArr1 == sortedArr2;
                 },
                 goToNextQuestion() {
                     if (this.selectedQuestion < this.questions.length - 1) {
