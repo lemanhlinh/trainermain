@@ -67,7 +67,7 @@
 
                 <div class="box-list-access hvr-push px-3">
                     @include('web.components.image', ['src' => 'images/teacher-amico.png'])
-                    <p class="text-center">Các giảng viên xịn xò từ 8.0+ theo sát, chăm sóc học viên kỹ càng, tận tâm như người thân.</p>
+                    <p class="text-center">Các giảng viên có chuyên môn cao từ 8.0+ theo sát, chăm sóc học viên kỹ càng, tận tâm như người thân.</p>
                 </div>
             </div>
         </div>

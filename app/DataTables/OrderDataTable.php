@@ -69,7 +69,12 @@ class OrderDataTable extends DataTable
                     ->setTableId('order-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->orderBy(0);
+                    ->dom('Bfrtip')
+                    ->orderBy(0)
+                    ->buttons(
+                        Button::make('excel')
+                    )
+                    ->parameters($this->getBuilderParameters());
     }
 
     /**
@@ -112,5 +117,23 @@ class OrderDataTable extends DataTable
     protected function filename()
     {
         return 'Order_' . date('YmdHis');
+    }
+
+    /**
+     * Get default builder parameters.
+     *
+     * @return array
+     */
+    protected function getBuilderParameters()
+    {
+        return [
+            'dom' => "<'row btn-table '<'col-sm-6'><'col-sm-6 dataTables_filter'B>>".
+                "<'row'<'col-sm-6'l><'col-sm-6'f>>" .
+                "<'row'<'col-sm-12'tr>>" .
+                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+            'language' => [
+                'url' => asset('vendor/datatables/languages/Vietnamese.json')
+            ],
+        ];
     }
 }
