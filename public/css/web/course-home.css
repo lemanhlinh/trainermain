@@ -506,6 +506,38 @@
 #exampleModal .modal-content .content-order-course .box-list-course .item-course:hover .title-course-re, #exampleModal .modal-content .content-order-course .box-list-course .item-course.active .title-course-re {
   color: #BC2330;
 }
+#exampleModal .modal-content .content-order-course .box-list-course .item-course input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course input[type=radio]:checked ~ .checkmark {
+  background-color: #BC2330;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course input[type=radio]:checked ~ .checkmark:after {
+  display: block;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course .checkmark {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+#exampleModal .modal-content .content-order-course .box-list-course .item-course .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
 #exampleModal .modal-content .content-order-course .total-payment {
   display: flex;
   justify-content: space-between;
@@ -527,6 +559,49 @@
   border-radius: 100px;
   padding: 12px 20px;
   margin-bottom: 15px;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .top-form .custom-control {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding-left: 25px;
+  margin-bottom: 15px;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .top-form .custom-control:hover input[type=radio] ~ .checkmark {
+  background-color: #ccc;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .top-form .custom-control input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .top-form .custom-control input[type=radio]:checked ~ .checkmark {
+  background-color: #BC2330;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .top-form .custom-control input[type=radio]:checked ~ .checkmark:after {
+  display: block;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .top-form .custom-control .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+#exampleModal .modal-content .content-order-course .form-in-detail-course .top-form .custom-control .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
 }
 #exampleModal .modal-content .content-order-course .form-in-detail-course .box-payment {
   padding: 10px 30px;

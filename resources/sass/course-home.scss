@@ -512,6 +512,38 @@
                             color: #BC2330;
                         }
                     }
+                    input[type="radio"]{
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        &:checked ~ .checkmark {
+                            background-color: #BC2330;
+                        }
+                        &:checked ~ .checkmark:after {
+                            display: block;
+                        }
+                    }
+                    .checkmark {
+                        position: absolute;
+                        top: 7px;
+                        left: 7px;
+                        height: 16px;
+                        width: 16px;
+                        background-color: #eee;
+                        border-radius: 50%;
+                        margin-top: 4px;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                            top: 4px;
+                            left: 4px;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: white;
+                        }
+                    }
                 }
 
             }
@@ -539,6 +571,48 @@
                         padding: 12px 20px;
                         margin-bottom: 15px;
                     }
+                    .custom-control{
+                        cursor: pointer;
+                        user-select: none;
+                        padding-left: 25px;
+                        margin-bottom: 15px;
+                        &:hover input[type="radio"] ~ .checkmark {
+                            background-color: #ccc;
+                        }
+                        input[type="radio"]{
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                            &:checked ~ .checkmark {
+                                background-color: #BC2330;
+                            }
+                            &:checked ~ .checkmark:after {
+                                display: block;
+                            }
+                        }
+                        .checkmark {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 16px;
+                            width: 16px;
+                            background-color: #eee;
+                            border-radius: 50%;
+                            margin-top: 4px;
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                display: none;
+                                top: 4px;
+                                left: 4px;
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 50%;
+                                background: white;
+                            }
+                        }
+                    }
+
                 }
                 .box-payment{
                     padding: 10px 30px;

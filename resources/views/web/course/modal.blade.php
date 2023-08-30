@@ -13,10 +13,13 @@
                                 <div class="item-course {{ (!empty($data) && $item->id == $data->id)?'active':'' }}">
                                     <div class="row mb-3">
                                         <div class="col-md-5">
-                                            <input class="course-select" value="{{ $item->id }}" data-price="{{ number_format($item->price_new, 0, ',', '.') }}đ" type="radio" name="course-check" id="course-{{ $item->id }}" {{ (!empty($data) && $item->id == $data->id)?'checked':'' }}>
-                                            <label for="course-{{ $item->id }}">
-                                                @include('web.components.image', ['src' => $item->image_resize['resize'], 'title' => $item->title])
-                                            </label>
+                                            <div class="position-relative">
+                                                <label for="course-{{ $item->id }}">
+                                                    <input class="course-select" value="{{ $item->id }}" data-price="{{ number_format($item->price_new, 0, ',', '.') }}đ" type="radio" name="course-check" id="course-{{ $item->id }}" {{ (!empty($data) && $item->id == $data->id)?'checked':'' }}>
+                                                    <span class="checkmark"></span>
+                                                    @include('web.components.image', ['src' => $item->image_resize['resize'], 'title' => $item->title])
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="col-md-7">
                                             <label for="course-{{ $item->id }}">
@@ -41,19 +44,24 @@
                     <div class="col-md-6 border-start ps-md-5">
                         <div class="title-left-popup">Thông tin khách hàng</div>
                         <p class="summary-for-popup">
-                            Để đăng ký khóa học, Quý khách vui lòng điền đầy đủ các thông tin dưới đây. IELTS Trainer sẽ liên hệ xác nhận trong vòng 15 phút
+                            Để đăng ký khóa học, Quý khách vui lòng điền đầy đủ các thông tin dưới đây. IELTS TRAINER sẽ liên hệ xác nhận trong vòng 15 phút
                         </p>
                         <form action="{{ route('detailCourseStore') }}" class="form-in-detail-course" name="form-in-detail-course" id="form-in-detail-course" method="post">
                             @csrf
                             <div class="top-form">
                                 <div class="form-group d-flex align-items-center">
-                                    <div class="custom-control custom-radio me-5">
-                                        <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" value="0" id="gender1" name="gender" checked>
-                                        <label for="gender1" class="custom-control-label">Anh</label>
+                                    <div class="custom-control custom-radio me-5 position-relative">
+                                        <label for="gender1" class="custom-control-label">
+                                            <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" value="0" id="gender1" name="gender" checked>
+                                            <span class="checkmark"></span>
+                                            Anh
+                                        </label>
                                     </div>
-                                    <div class="custom-control custom-radio">
+                                    <div class="custom-control custom-radio position-relative">
+                                        <label for="gender2" class="custom-control-label">
                                         <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" value="1" id="gender2" name="gender">
-                                        <label for="gender2" class="custom-control-label">Chị</label>
+                                        <span class="checkmark"></span>
+                                        Chị</label>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -75,13 +83,17 @@
                                 <textarea name="note" id="note" cols="30" rows="1" class="form-control" placeholder="Ghi chú thêm (Ví dụ: Giao hàng trong giờ hành chính)">{{ old('note') }}</textarea>
                                 <hr>
                                 <div class="form-group d-flex align-items-center">
-                                    <div class="custom-control custom-radio me-5">
+                                    <div class="custom-control custom-radio me-5 position-relative">
+                                        <label for="where_learn1" class="custom-control-label">
                                         <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" value="0" id="where_learn1" name="where_learn" checked>
-                                        <label for="where_learn1" class="custom-control-label">Học online</label>
+                                        <span class="checkmark"></span>
+                                        Học online</label>
                                     </div>
-                                    <div class="custom-control custom-radio">
+                                    <div class="custom-control custom-radio position-relative">
+                                        <label for="where_learn2" class="custom-control-label">
                                         <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" value="1" id="where_learn2" name="where_learn">
-                                        <label for="where_learn2" class="custom-control-label">Học tại trung tâm</label>
+                                        <span class="checkmark"></span>
+                                        Học tại trung tâm</label>
                                     </div>
                                 </div>
                                 <input type="text" class="form-control" {{ old('voucher_course') }} name="voucher_course" placeholder="Mã giảm giá (Nếu có)">
