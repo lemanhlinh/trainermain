@@ -20,6 +20,7 @@ class CreateStoreTable extends Migration
             $table->string('address')->nullable();
             $table->tinyInteger('active')->default(0)->comment('0: Không hoạt động; 1: Hoạt động');
             $table->integer('ordering')->default(0);
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

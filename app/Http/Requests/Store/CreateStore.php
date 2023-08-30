@@ -27,7 +27,8 @@ class CreateStore extends FormRequest
             'title' => 'required',
             'phone' => 'required',
             'active' => 'required',
-            'ordering' => 'required'
+            'ordering' => 'required',
+            'content' => 'required'
         ];
     }
 }

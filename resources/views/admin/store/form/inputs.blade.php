@@ -59,6 +59,27 @@
                     @endif
                 </div>
             </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label>@lang('form.content')</label>
+                    <div id="toolbar" class="d-none">
+                        <!-- Các nút CKEditor khác -->
+                        <span class="cke_toolbar" role="toolbar">
+                    <span class="cke_toolbar_start">
+                        <a class="cke_button" onclick="insertHTML()">Chèn HTML</a>
+                    </span>
+                </span>
+                    </div>
+
+                    <textarea id="content" name="content" class="form-control" rows="10" >{{ isset($store->content) ? $store->content : old('content') }}</textarea>
+                    @if ($errors->has('content'))
+                        <span class="help-block text-danger">
+                    <strong>{{ $errors->first('content') }}</strong>
+                </span>
+                    @endif
+                    <div class="editor"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-sm-5">
@@ -68,4 +89,61 @@
 
 @section('script')
     @parent
+    <script src="{{ asset('ckeditor5/ckeditor.js') }}"></script>
+    <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
+    <script>
+        let editor;
+        InlineEditor
+            .create( document.querySelector( '#content' ),{
+                ckfinder: {
+                    uploadUrl: '{!! asset('ckfinder/core/connector/php/connector.php').'?command=QuickUpload&type=Images&responseType=json' !!}',
+                    options: {
+                        resourceType: 'Images'
+                    }
+                }
+            } )
+            .then( newEditor => {
+                editor = newEditor; // Lưu trình soạn thảo CKEditor vào biến editor
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+        function insertHTML() {
+            CKFinder.modal( {
+                chooseFiles: true,
+                width: 800,
+                height: 600,
+                onInit: function( finder ) {
+                    finder.on('files:choose', function(evt) {
+                        const file = evt.data.files.first();
+                        const docFrag = editor.model.change( writer => {
+                            const p1 = writer.createElement( 'paragraph');
+                            const p2 = writer.createElement( 'paragraph' );
+                            const image = writer.createAttributeElement( 'figure',{
+                                class: 'image'
+                            } );
+                            const image_detail = writer.createElement( 'img',{
+                                src: '/storage/upload_image/images/26-1-202221-4259-1643241010(1).png'
+                            } );
+                            const blockQuote = writer.createElement( 'blockQuote' );
+                            const docFrag = writer.createDocumentFragment();
+
+                            writer.append( p1, docFrag );
+                            writer.append( blockQuote, docFrag );
+                            writer.append( p2, blockQuote );
+                            writer.append( image, docFrag );
+                            writer.append( image_detail, image );
+                            writer.insertText( 'barsss', p1 );
+                            writer.insertText( 'bar', p2 );
+
+                            return docFrag;
+                        } );
+                        editor.model.insertContent( docFrag );
+                    });
+                }
+            } );
+
+
+        }
+    </script>
 @endsection

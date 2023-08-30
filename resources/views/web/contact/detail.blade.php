@@ -47,6 +47,9 @@
             <div class="row">
                 @forelse($stores as $store)
                 <div class="col-md-6">
+                    <div class="mb-3 map-contact">
+                        {!! $store->content !!}
+                    </div>
                     <h3>Công ty TNHH Giáo dục IELTS Trainer</h3>
                     <ul class="list-unstyled">
                         <li>{{ $store->title }}</li>
