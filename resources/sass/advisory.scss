@@ -12,6 +12,11 @@
             text-transform: uppercase;
             margin-bottom: 15px;
             line-height: 55px;
+            @media (max-width: 768px) {
+                font-size: 24px;
+                margin-bottom: 20px;
+                line-height: inherit;
+            }
         }
         .list-chat-form{
             ul{

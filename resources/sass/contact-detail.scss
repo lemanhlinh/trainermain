@@ -50,6 +50,7 @@
             list-style: none;
             color: #7F7F7F;
             margin-bottom: 0;
+            word-break: break-word;
             li{
                 &:first-child{
                     font-size: 20px;
