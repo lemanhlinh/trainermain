@@ -28,7 +28,7 @@
     <div class="bottom-footer py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-8"><span class="year-product">© 2023 Công ty TNHH Giáo dục IELTS Trainer. All Rights Reserved.</span></div>
+                <div class="col-md-8"><span class="year-product">© 2023 Công ty TNHH Giáo dục IELTS TRAINER. All Rights Reserved.</span></div>
                 <div class="col-md-4">
                     <ul class="list-unstyled text-uppercase m-0 list-social-ft">
                         <li>

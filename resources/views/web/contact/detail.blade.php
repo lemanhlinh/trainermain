@@ -43,14 +43,14 @@
     </div>
     <div class="content-detail-bottom">
         <div class="container">
-            <h4 class="title-bottom-contact">Hẹn gặp bạn tại cơ sở IELTS Trainer gần nhất của chúng mình nhé!</h4>
+            <h4 class="title-bottom-contact">Hẹn gặp bạn tại cơ sở IELTS TRAINER gần nhất của chúng mình nhé!</h4>
             <div class="row">
                 @forelse($stores as $store)
                 <div class="col-md-6">
                     <div class="mb-3 map-contact">
                         {!! $store->content !!}
                     </div>
-                    <h3>Công ty TNHH Giáo dục IELTS Trainer</h3>
+                    <h3>Công ty TNHH Giáo dục IELTS TRAINER</h3>
                     <ul class="list-unstyled">
                         <li>{{ $store->title }}</li>
                         <li>Tel: {{ $store->phone }}</li>

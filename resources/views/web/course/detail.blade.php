@@ -22,7 +22,7 @@
     <div class="content-detail">
         <div class="container">
             <div class="box-content-detail">
-                <h2 class="title-article-detail">Khóa học {{ $data->title }} tại IELTS Trainer giúp bạn</h2>
+                <h2 class="title-article-detail">Khóa học {{ $data->title }} tại IELTS TRAINER giúp bạn</h2>
                 <div class="d-none d-md-block">
                     @include('web.components.image', ['src' => $data->image_pc, 'title'=> $data->title,'class' => 'mb-5'])
                 </div>
