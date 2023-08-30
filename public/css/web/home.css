@@ -48,6 +48,9 @@
   text-align: center;
   bottom: 0;
 }
+.why-different .list-why-diffe .box-why .show-hidden-why .title-why-different {
+  font-family: HelveticaNeue-Bold;
+}
 .why-different .list-why-diffe .box-why .show-hidden-why img {
   display: block;
   margin: 0 auto 24px;
@@ -118,9 +121,13 @@
     position: relative;
     transform: translate(-50%, 0%);
     height: 100%;
-    padding: 35% 20px;
+    padding: 10% 20px;
     background: none;
   }
+}
+.why-different .list-why-different .box-why .show-hidden-why .title-why-different {
+  font-family: HelveticaNeue-Bold;
+  text-transform: uppercase;
 }
 .why-different .list-why-different .box-why:hover .show-hidden-why {
   background: rgba(229, 174, 53, 0.64);
@@ -128,7 +135,7 @@
           backdrop-filter: blur(4px);
   transform: translate(-50%, 0%);
   height: 100%;
-  padding: 35% 20px;
+  padding: 10% 20px;
 }
 @media (max-width: 768px) {
   .why-different .list-why-different .box-why:hover .show-hidden-why {

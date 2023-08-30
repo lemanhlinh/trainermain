@@ -13,7 +13,7 @@
                         <div class="box-why">
                             <div class="show-hidden-why">
                                 @include('web.components.image', ['src' => $item->icon, 'title'=> $item->title])
-                                <p>{{ $item->title }}</p>
+                                <p class="title-why-different">{{ $item->title }}</p>
                                 <span>{{ $item->description }}</span>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                         <div class="box-why">
                             <div class="show-hidden-why">
                                 @include('web.components.image', ['src' => $item->icon, 'title'=> $item->title])
-                                <p>{{ $item->title }}</p>
+                                <p class="title-why-different">{{ $item->title }}</p>
                                 <span>{{ $item->description }}</span>
                             </div>
                         </div>
