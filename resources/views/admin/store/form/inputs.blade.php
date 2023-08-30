@@ -61,13 +61,7 @@
             </div>
             <div class="col-sm-12">
                 <div class="form-group">
-                    <label>@lang('form.content')</label>
-                    <div id="toolbar" class="d-none">
-                        <!-- Các nút CKEditor khác -->
-                        <span class="cke_toolbar" role="toolbar">
-                    <span class="cke_toolbar_start">
-                        <a class="cke_button" onclick="insertHTML()">Chèn HTML</a>
-                    </span>
+                    <label>Nhúng bản đồ</label>
                 </span>
                     </div>
 
