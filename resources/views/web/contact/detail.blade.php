@@ -20,7 +20,7 @@
                         @include('web.components.image', ['src' => 'images/customer-support.png'])
                         <ul class="info-box">
                             <li>Hotline: <span class="color-other-contact">{{ $setting['hotline'] }}</span></li>
-                            <li>Giờ hỗ trợ: {{ $setting['time_work_contact'] }}</li>
+                            <li>Giờ hỗ trợ: {{ $setting['time_work_contact_hotline'] }}</li>
                         </ul>
                     </div>
                     <div class="box-contact">
@@ -34,7 +34,7 @@
                         @include('web.components.image', ['src' => 'images/link-contact3.png'])
                         <ul class="info-box">
                             <li>Fanpage: {{ $setting['link_facebook'] }}</li>
-                            <li>Chúng tôi online: {{ $setting['time_work_contact'] }}</li>
+                            <li>Chúng tôi online: {{ $setting['time_work_contact_fanpage'] }}</li>
                         </ul>
                     </div>
                 </div>
