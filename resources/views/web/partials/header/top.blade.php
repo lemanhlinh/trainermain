@@ -21,9 +21,10 @@
                     <div class="action-top-head col-md-6">
                         <div class="row">
                             <div class="col-md-7">
-                                <form action="" name="search-head-pc" class="search-head-pc">
+                                <form action="{{ route('formSearch') }}" name="search-head-pc" class="search-head-pc" method="post">
+                                    @csrf
                                     <div class="input-group">
-                                        <input type="text" class="form-control" name="keyword" placeholder="Tìm kiếm" aria-label="Tìm kiếm" aria-describedby="button-search-top" required>
+                                        <input type="text" class="form-control" value="{{ old('keyword') }}" name="keyword" placeholder="Tìm kiếm" aria-label="Tìm kiếm" aria-describedby="button-search-top" required>
                                         <button class="btn btn-outline-secondary" type="submit" id="button-search-top"><i class="fas fa-search"></i></button>
                                     </div>
                                 </form>

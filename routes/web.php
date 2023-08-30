@@ -43,6 +43,8 @@ Route::group(['namespace' => 'Web'], function (){
     Route::get('/bai-thi/{id}', 'MemberTestController@examTest')->name('examTest');
     Route::post('/bai-thi/{id}', 'MemberTestController@saveTest')->name('saveTest');
     Route::get('/trang/{slug}', 'PageController@index')->name('detailPage');
+    Route::post('/tim-kiem', 'PageController@search')->name('formSearch');
+    Route::get('/tim-kiem/{keyword?}', 'PageController@detailSearch')->name('detailSearch');
 });
 
 //Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')

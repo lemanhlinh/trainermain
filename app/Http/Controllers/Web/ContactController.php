@@ -41,7 +41,7 @@ class ContactController extends Controller
             $getEmail = Setting::where('key', 'email_for_admin')->first();
             $listEmail = explode(',',$getEmail->value);
             Mail::to($data['email'])->cc($listEmail)->send(new ContactMail($data));
-            Session::flash('success', trans('message.create_contact_success'));
+            Session::flash('success', 'Cảm ơn, chúng tôi sẽ liên hệ với bạn sớm nhất có thể!');
             return redirect()->back();
         } catch (\Exception $ex) {
             DB::rollBack();
