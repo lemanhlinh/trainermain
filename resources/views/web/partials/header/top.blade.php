@@ -38,7 +38,7 @@
             </div>
             <div class="col-9 d-block d-md-none">
                 <div class="d-flex justify-content-end align-items-center mobile-head-top">
-                    <p><i class="fas fa-search"></i></p>
+                    <p data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></p>
                     <a href="{{ route('detailAdvisory') }}" class="d-block register-trainer">Tư vấn</a>
                     <button data-bs-toggle="modal" data-bs-target="#testOnline" class="btn d-block register-trainer">Test online</button>
                 </div>

@@ -48,7 +48,7 @@
         <button type="button" class="btn-close text-reset btn-close-modal" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <div class="offcanvas-header">
             <img src="{{ asset('images/mobile/logo-modal-mobile.png') }}" alt="{{ asset($setting['site_name']) }}" class="img-fluid">
-            <h5 class="offcanvas-title" id="offcanvasBottomLabel">IELTS Trainer có thể hỗ trợ gì cho anh chị ạ?</h5>
+            <h5 class="offcanvas-title" id="offcanvasBottomLabel">IELTS TRAINER có thể hỗ trợ gì cho anh chị ạ?</h5>
         </div>
         <div class="offcanvas-body large">
             <ul class="list-unstyled">
@@ -57,6 +57,22 @@
                 <li class="d-flex"><img src="{{ asset('images/mobile/callcalling.png') }}" alt="Gọi điện thoại trực tiếp" class="img-fluid"><a href="tel:{{ $setting['hotline'] }}">Gọi điện thoại trực tiếp <span>{{ $setting['hotline'] }}</span></a></li>
                 <li class="d-flex"><img src="{{ asset('images/mobile/sms.png') }}" alt="Liên hệ qua Email" class="img-fluid"><a href="mailto:{{ $setting['email'] }}">Liên hệ qua Email <span>{{ $setting['email'] }}</span></a></li>
             </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="{{ route('formSearch') }}" name="search-head-pc" class="search-head-pc" method="post">
+                    @csrf
+                    <div class="input-group">
+                        <input type="text" class="form-control" value="{{ old('keyword') }}" name="keyword" placeholder="Tìm kiếm" aria-label="Tìm kiếm" aria-describedby="button-search-top" required>
+                        <button class="btn btn-outline-secondary" type="submit" id="button-search-top"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
