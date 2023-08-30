@@ -11,7 +11,7 @@
                                 @if(isset($type_id) && $item->id == $type_id)
                                     <option value="{{ $item->id }}" selected>{{ $item->name }}</option>
                                 @else
-                                    <option value="{{ $item->id }}" {{ isset($question) && empty($type_id) ? ($question->type_id === $item->id ? 'selected':'') : (old('type_id') === $item->id ?'selected':'') }}>{{ $item->name }}</option>
+                                    <option value="{{ $item->id }}" {{ isset($question) && empty($type_id) ? ($question->type_id == $item->id ? 'selected':'') : (old('type_id') == $item->id ?'selected':'') }}>{{ $item->name }}</option>
                                 @endif
                             @endforeach
                         @endif
@@ -29,7 +29,7 @@
                     <label>@lang('form.question_test.level')</label>
                     <select class="form-control" data-placeholder="@lang('form.question_test.level')" name="level" required >
                         @forelse(\App\Models\QuestionTest::LEVEL_VALUE as $key => $value)
-                            <option value="{{ $key }}" {{ isset($question) ? ($question->type_id === $key ? 'selected':'') : (old('level') === $key ?'selected':'') }}>{{ $value }}</option>
+                            <option value="{{ $key }}" {{ isset($question) ? ($question->type_id == $key ? 'selected':'') : (old('level') == $key ?'selected':'') }}>{{ $value }}</option>
                         @empty
                         @endforelse
                     </select>
@@ -48,7 +48,7 @@
                     <select class="form-control" data-placeholder="@lang('form.question_test.lesson_id')" name="lesson_id" >
                         @if(isset($lesson))
                             @foreach($lesson as $item)
-                                <option value="{{ $item->id }}" {{ isset($question) ? ($question->lesson_id === $item->id ? 'selected':'') : (old('lesson_id') === $item ?'selected':'') }}>{{ $item->name }}</option>
+                                <option value="{{ $item->id }}" {{ isset($question) ? ($question->lesson_id == $item->id ? 'selected':'') : (old('lesson_id') == $item ?'selected':'') }}>{{ $item->name }}</option>
                             @endforeach
                         @endif
                     </select>
@@ -113,7 +113,7 @@
                                     <tr>
                                         <td>Đáp án {{ $key+1 }}</td>
                                         <td><input type="text" name="answer[]" class="form-control" placeholder="Đáp án {{ $key+1 }}" value="{{ $value->content_answer }}"></td>
-                                        <td class="text-center"><input type="checkbox" name="answer_true[]" value="{{ $key }}" {{ $value->answer === 1 ? 'checked':'' }}></td>
+                                        <td class="text-center"><input type="checkbox" name="answer_true[]" value="{{ $key }}" {{ $value->answer == 1 ? 'checked':'' }}></td>
                                     </tr>
                                 @empty
                                     @if($type_id == 3)
@@ -210,7 +210,7 @@
                                     <tr>
                                         <td>Đáp án {{ $key+1 }}</td>
                                         <td><input type="text" name="answer[]" class="form-control" placeholder="Đáp án {{ $key+1 }}" value="{{ $value->content_answer }}"></td>
-                                        <td class="text-center"><input type="checkbox" name="answer_true[]" value="{{ $key }}" {{ $value->answer === 1 ? 'checked':'' }}></td>
+                                        <td class="text-center"><input type="checkbox" name="answer_true[]" value="{{ $key }}" {{ $value->answer == 1 ? 'checked':'' }}></td>
                                     </tr>
                                 @empty
                                     @if($type_id == 3)
@@ -305,7 +305,7 @@
                                     <tr>
                                         <td>Đáp án {{ $key+1 }}</td>
                                         <td><input type="text" name="answer[]" class="form-control" placeholder="Đáp án {{ $key+1 }}" value="{{ $value->content_answer }}"></td>
-                                        <td class="text-center"><input type="checkbox" name="answer_true[]" value="{{ $key }}" {{ $value->answer === 1 ? 'checked':'' }}></td>
+                                        <td class="text-center"><input type="checkbox" name="answer_true[]" value="{{ $key }}" {{ $value->answer == 1 ? 'checked':'' }}></td>
                                     </tr>
                                 @empty
                                     <tr>
