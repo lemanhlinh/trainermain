@@ -18,6 +18,11 @@ a{
             padding: 16px 0;
             display: block;
         }
+        .contact-head{
+            @media (min-width: 768px) {
+                width: 55%;
+            }
+        }
         .list-hotline-email{
             margin: 0;
             li{
@@ -38,6 +43,9 @@ a{
             }
         }
         .action-top-head{
+            @media (min-width: 768px) {
+                width: 45%;
+            }
             .search-head-pc{
                 input,button{
                     border: none;
@@ -54,7 +62,7 @@ a{
                 color: #fff;
                 font-family: HelveticaNeue-Bold;
                 text-decoration: unset;
-                padding: 11px 24px;
+                padding: 11px 16px;
                 font-size: 14px;
             }
         }

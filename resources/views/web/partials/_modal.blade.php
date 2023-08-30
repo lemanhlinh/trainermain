@@ -16,9 +16,9 @@
                     <div class="modal-body">
                         <p>Để tham gia test online, Quý khách vui lòng điền đầy đủ các thông tin dưới đây để tiến hành tham gia.</p>
                         <input type="text" class="form-control mb-3" value="{{ old('full_name')?old('full_name'):'' }}" placeholder="Họ và tên" name="full_name" required>
-                        <input type="number" class="form-control mb-3" value="{{ old('phone')?old('phone'):'' }}" placeholder="Số điện thoại" name="phone" required>
+                        <input type="number" class="form-control mb-3" min="0" value="{{ old('phone')?old('phone'):'' }}" placeholder="Số điện thoại" name="phone" required>
                         <input type="email" class="form-control mb-3" value="{{ old('email')?old('email'):'' }}" placeholder="Email" name="email" required>
-                        <select name="gender" id="gender-test" class="form-control mb-3" required>
+                        <select name="gender" id="gender-test" class="form-control mb-3 text-secondary" required>
                             <option value="">Giới tính</option>
                             <option value="1" {{ old('gender') == 1? 'selected':'' }}>Nam</option>
                             <option value="2" {{ old('gender') == 2? 'selected':'' }}>Nữ</option>

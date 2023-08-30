@@ -32,7 +32,12 @@ class PageController extends Controller
     public function detailSearch($keyword = null)
     {
         $slug = \Str::slug($keyword, '-');
-        $articles = Article::where('slug','like', '%'.$slug.'%')->orwhere('title','like', '%'.$keyword.'%')->paginate(9);
+        $articles = Article::where('active', 1)
+                        ->where(function ($query) use ($slug, $keyword) {
+                            $query->where('slug', 'like', '%'.$slug.'%')
+                                ->orWhere('title', 'like', '%'.$keyword.'%');
+                        })
+                        ->paginate(9);
         return view('web.page.search', compact('articles','keyword'));
     }
 }

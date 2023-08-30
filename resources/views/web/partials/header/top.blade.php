@@ -5,8 +5,8 @@
                 <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset($setting['logo']) }}" alt="{{ asset($setting['site_name']) }}" class="img-fluid logo-fs"></a>
             </div>
             <div class="col-md-9 d-none d-md-block">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row g-2">
+                    <div class="col-md-6 contact-head">
                         <ul class="list-unstyled list-hotline-email">
                             <li class="hotline-web d-inline-block">
                                 <img src="{{ asset('images/hotline.png') }}" alt="Hotline">
@@ -20,7 +20,7 @@
                     </div>
                     <div class="action-top-head col-md-6">
                         <div class="row">
-                            <div class="col-md-7">
+                            <div class="col-md-12 col-xl-7">
                                 <form action="{{ route('formSearch') }}" name="search-head-pc" class="search-head-pc" method="post">
                                     @csrf
                                     <div class="input-group">
@@ -29,7 +29,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-12 col-xl-5">
                                 <a href="{{ route('detailAdvisory') }}" class="d-block register-trainer">Đăng ký tư vấn</a>
                             </div>
                         </div>

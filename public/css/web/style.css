@@ -2827,6 +2827,11 @@ a:hover {
   padding: 16px 0;
   display: block;
 }
+@media (min-width: 768px) {
+  .navbar-finalstyle .top-head .contact-head {
+    width: 55%;
+  }
+}
 .navbar-finalstyle .top-head .list-hotline-email {
   margin: 0;
 }
@@ -2846,6 +2851,11 @@ a:hover {
 .navbar-finalstyle .top-head .list-hotline-email li:first-child {
   margin-right: 10px;
 }
+@media (min-width: 768px) {
+  .navbar-finalstyle .top-head .action-top-head {
+    width: 45%;
+  }
+}
 .navbar-finalstyle .top-head .action-top-head .search-head-pc input, .navbar-finalstyle .top-head .action-top-head .search-head-pc button {
   border: none;
   background: #F8F8F8;
@@ -2860,7 +2870,7 @@ a:hover {
   color: #fff;
   font-family: HelveticaNeue-Bold;
   text-decoration: unset;
-  padding: 11px 24px;
+  padding: 11px 16px;
   font-size: 14px;
 }
 .navbar-finalstyle .top-head .mobile-head-top p {

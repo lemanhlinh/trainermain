@@ -27,7 +27,7 @@
                         <span v-else>
                             <a class="btn btn-send-exam w-100" href="{{ route('examTest',$member_test->id) }}" >Làm lại bài thi <i class="fas fa-redo-alt"></i></a>
                         </span>
-                        <button class="btn btn-out-exam border">Thoát</button>
+                        <a class="btn btn-out-exam border" href="{{ route('detailAdvisory') }}">Thoát</a>
                     </div>
                 </div>
                 <div class="col-md-8">
