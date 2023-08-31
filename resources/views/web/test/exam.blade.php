@@ -38,8 +38,8 @@
                                 <div v-if="question.type_id == 1">
                                     <p class="title-question" v-html="question.content"></p>
                                     <ul class="list-unstyled">
-                                        <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
-                                            <label>
+                                        <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex" >
+                                            <label v-if="answer.content_answer">
                                                 <input
                                                     type="radio"
                                                     :name="'question_' + questionIndex"
@@ -82,7 +82,7 @@
                                     <p class="title-question" v-html="question.content"></p>
                                     <ul class="list-unstyled">
                                         <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
-                                            <label>
+                                            <label v-if="answer.content_answer">
                                                 <input
                                                     type="radio"
                                                     :name="'question_' + questionIndex"
@@ -103,7 +103,7 @@
                                     <p class="title-question" v-html="question.content"></p>
                                     <ul class="list-unstyled">
                                         <li v-for="(answer, answerIndex) in question.question_item_test" :key="answerIndex">
-                                            <label>
+                                            <label v-if="answer.content_answer">
                                                 <input
                                                     type="checkbox"
                                                     :name="'question_' + questionIndex"
