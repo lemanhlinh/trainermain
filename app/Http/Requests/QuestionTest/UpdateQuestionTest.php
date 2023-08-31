@@ -29,7 +29,7 @@ class UpdateQuestionTest extends FormRequest
             'content' => 'required',
             'type_id' => 'required',
             'level' => 'required',
-            'answer' => 'required_without_all',
+            'answer' => 'required_without_all:answer',
             'answer_true' => 'required',
         ];
     }

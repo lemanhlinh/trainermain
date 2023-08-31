@@ -17,7 +17,7 @@ class CreateQuestionItemTestTable extends Migration
             $table->increments('id');
             $table->integer('question_id');
             $table->tinyInteger('answer')->default(0)->comment('0: Sai; 1: Đúng');
-            $table->text('content_answer');
+            $table->text('content_answer')->nullable();
             $table->timestamps();
         });
     }

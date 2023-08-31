@@ -76,7 +76,7 @@ class QuestionTestController extends Controller
                 if (isset($listAnswer[$key])) {
                     $listAnswer[$key]->update([
                         'question_id' => $question->id,
-                        'content_answer' => $item,
+                        'content_answer' => isset($item)?$item:'',
                         'answer' => (in_array($key, $answer_true) ? 1 : 0),
                     ]);
                 } else {
@@ -149,7 +149,7 @@ class QuestionTestController extends Controller
                 if (isset($listAnswer[$key])) {
                     $listAnswer[$key]->update([
                         'question_id' => $question->id,
-                        'content_answer' => $item,
+                        'content_answer' => isset($item)?$item:'',
                         'answer' => (in_array($key, $answer_true) ? 1 : 0),
                     ]);
                 } else {
