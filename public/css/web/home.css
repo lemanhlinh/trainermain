@@ -305,12 +305,8 @@
   }
 }
 .form-advisory {
-  background: url(/images/bg-form.jpg?26304f2314935dbb8ac3560d096b025b) center no-repeat;
-}
-@media (max-width: 768px) {
-  .form-advisory {
-    background: url(/images/bg-form.jpg?26304f2314935dbb8ac3560d096b025b) left no-repeat;
-  }
+  background: url(/images/bg-form.jpg?068adc0932cc84f4d0bf3b660db8e7e9) left no-repeat;
+  background-size: cover;
 }
 .form-advisory .register-learn {
   padding: 100px 0;
@@ -372,6 +368,10 @@
   appearance: none;
   margin: 0;
 }
+.form-advisory .register-learn .form-home-add input[type=datetime-local]:focus {
+  background: #fff;
+  color: #000;
+}
 .form-advisory .register-learn .form-home-add #calendarIcon {
   right: 0;
   top: 0;
@@ -395,6 +395,9 @@
 }
 .form-advisory .register-learn .form-home-add .submit-form-home i {
   margin-left: 10px;
+}
+.form-advisory .register-learn .bg-for-form-advisory img {
+  bottom: -100px;
 }
 
 .content-student {

@@ -99,7 +99,7 @@
                                 <option value="Get Ielts 7.5+" {{ old('why_learn_ielts') == 'Get Ielts 7.5+' ? 'selected' : '' }} >Get Ielts 7.5+</option>
                             </select>
                             <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Bạn muốn IELTS TRAINER tư vấn lúc nào?" value="{{ old('time_ielts_support') }}" name="time_ielts_support" id="time_ielts_support" required>
+                                <input type="text" class="form-control" placeholder="Bạn muốn IELTS TRAINER tư vấn lúc nào?" onchange="checkDateTime()" value="{{ old('time_ielts_support') }}" name="time_ielts_support" id="time_ielts_support" required>
 {{--                                <span class="position-absolute" id="calendarIcon"><i class="fas fa-calendar-alt"></i></span>--}}
                             </div>
 
@@ -115,6 +115,11 @@
                             </select>
                             <button class="form-control submit-form-home">đăng ký học thử miển phí <i class="fas fa-paper-plane"></i></button>
                         </form>
+                    </div>
+                    <div class="col-md-7 d-none d-md-block">
+                        <div class="position-relative w-100 h-100 bg-for-form-advisory">
+                            <img src="{{ asset('images/bg-advisory.png') }}" alt="" class="img-fluid position-absolute end-0">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -230,11 +235,31 @@
 
 @section('script')
     @parent
-    <script src="{{ asset('/js/jquery-ui.min.js') }}"></script>
+{{--    <script src="{{ asset('/js/jquery-ui.min.js') }}"></script>--}}
     <script>
-        $( function() {
-            $( "#time_ielts_support" ).datepicker({ dateFormat: 'dd-mm-yy' });
-        } );
+        // Lấy tham chiếu đến phần tử input datetime-local
+        var datetimeInput = $("#time_ielts_support");
+        // Khi phần tử input datetime-local được tập trung vào (focus)
+        datetimeInput.on("focus", function() {
+            // Thay đổi loại của phần tử input sang "datetime-local"
+            $(this).prop("type", "datetime-local");
+        });
+
+        // $( function() {
+        //     $( "#time_ielts_support" ).datepicker({ dateFormat: 'dd-mm-yy' });
+        // } );
+
+        function checkDateTime() {
+            const inputDate = new Date(document.getElementById("time_ielts_support").value);
+            const currentDate = new Date();
+            inputDate.setHours(0, 0, 0, 0);
+            currentDate.setHours(0, 0, 0, 0);
+
+            if (inputDate.getTime() < currentDate.getTime()) {
+                alert('Bạn không thể chọn thời gian quá khứ.')
+                document.getElementById("time_ielts_support").value = ""; // Xoá giá trị nếu người dùng đã chọn thời gian quá khứ
+            }
+        }
 
         $('.list-teacher-show').slick({
             infinite: true,

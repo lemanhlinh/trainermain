@@ -27,7 +27,7 @@
                                 <option value="Get Ielts 6.5+" {{ old('why_learn_ielts') == 'Get Ielts 6.5+' ? 'selected' : '' }} >Get Ielts 6.5+</option>
                                 <option value="Get Ielts 7.5+" {{ old('why_learn_ielts') == 'Get Ielts 7.5+' ? 'selected' : '' }} >Get Ielts 7.5+</option>
                             </select>
-                            <input type="text" class="form-control" placeholder="Bạn muốn IELTS TRAINER tư vấn lúc nào?" value="{{ old('time_ielts_support') }}" id="time_ielts_support" name="time_ielts_support" required>
+                            <input type="text" class="form-control" placeholder="Bạn muốn IELTS TRAINER tư vấn lúc nào?" onchange="checkDateTime()" value="{{ old('time_ielts_support') }}" id="time_ielts_support" name="time_ielts_support" required>
                             <select name="test_ielts_address" id="test_ielts_address" class="form-select" required>
                                 <option value="" disabled selected>Bạn muốn kiểm tra ở trung tâm nào?</option>
                                 @if(!empty($stores))
@@ -40,6 +40,11 @@
                             </select>
                             <button class="form-control submit-form-home">đăng ký học thử miển phí <i class="fas fa-paper-plane"></i></button>
                         </form>
+                    </div>
+                    <div class="col-md-7 d-none d-md-block">
+                        <div class="position-relative w-100 h-100 bg-for-form-advisory">
+                            <img src="{{ asset('images/bg-advisory.png') }}" alt="" class="img-fluid position-absolute end-0">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -63,5 +68,17 @@
             // Thay đổi loại của phần tử input sang "datetime-local"
             $(this).prop("type", "datetime-local");
         });
+
+        function checkDateTime() {
+            const inputDate = new Date(document.getElementById("time_ielts_support").value);
+            const currentDate = new Date();
+            inputDate.setHours(0, 0, 0, 0);
+            currentDate.setHours(0, 0, 0, 0);
+
+            if (inputDate.getTime() < currentDate.getTime()) {
+                alert('Bạn không thể chọn thời gian quá khứ.')
+                document.getElementById("time_ielts_support").value = ""; // Xoá giá trị nếu người dùng đã chọn thời gian quá khứ
+            }
+        }
     </script>
 @endsection

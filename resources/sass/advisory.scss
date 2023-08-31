@@ -5,6 +5,7 @@
 .form-advisory{
     background: url("../images/bg-form.jpg") left center no-repeat;
     padding: 52px 0;
+    background-size: cover;
     .register-learn{
         .title-form-add{
             color: #fff;
@@ -60,6 +61,12 @@
                 appearance: none;
                 margin: 0;
             }
+            input[type="datetime-local"]{
+                &:focus{
+                    background: #fff;
+                    color: #000;
+                }
+            }
             .submit-form-home{
                 border-radius: 100px;
                 border: none;
@@ -77,6 +84,11 @@
                 i{
                     margin-left: 10px;
                 }
+            }
+        }
+        .bg-for-form-advisory{
+            img{
+                bottom: -52px;
             }
         }
     }
