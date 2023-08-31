@@ -115,6 +115,9 @@
   background: #fff;
   padding: 48px;
 }
+.content-list-course .tab-content-program #myTabContent h3 {
+  font-size: calc(1rem + 0.39vw);
+}
 .content-list-course .btn-under-content {
   text-align: center;
   display: block;

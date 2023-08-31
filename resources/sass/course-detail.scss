@@ -104,6 +104,9 @@
         #myTabContent{
             background: #fff;
             padding: 48px;
+            h3 {
+                font-size: calc(1rem + 0.39vw);
+            }
         }
     }
     .btn-under-content{
