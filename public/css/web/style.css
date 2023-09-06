@@ -3100,7 +3100,7 @@ a:hover {
 }
 #app .scroll-top {
   z-index: 5;
-  bottom: 100px;
+  bottom: 192px;
   right: 20px;
 }
 @media (max-width: 768px) {
@@ -3118,6 +3118,16 @@ a:hover {
   line-height: 48px;
   font-size: 20px;
   color: #fff;
+}
+#app .social-chat-online {
+  z-index: 5;
+  bottom: 80px;
+  right: 20px;
+}
+@media (max-width: 768px) {
+  #app .social-chat-online {
+    display: none;
+  }
 }
 #app #notification {
   border-radius: 100px;
