@@ -88,7 +88,7 @@
                         <form action="{{ route('detailAdvisoryStore') }}" class="form-home-add" name="form-advisory" id="form-advisory" method="post">
                             @csrf
                             <input type="text" class="form-control" placeholder="Họ và tên" name="full_name" value="{{ old('full_name') }}" required>
-                            <input type="number" class="form-control" placeholder="Số điện thoại" name="phone" value="{{ old('phone') }}" required>
+                            <input type="number" class="form-control" min="0" placeholder="Số điện thoại" name="phone" value="{{ old('phone') }}" required>
                             <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required>
                             <select name="why_learn_ielts" id="why_learn_ielts" class="form-select" required>
                                 <option value="" disabled selected>Band điểm mong muốn của bạn?</option>
