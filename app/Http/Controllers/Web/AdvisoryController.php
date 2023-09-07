@@ -60,7 +60,7 @@ class AdvisoryController extends Controller
             $listEmail = explode(',',$getEmail->value);
             Mail::to($data['email'])->cc($listEmail)->send(new AdvisoryMail($data));
             DB::commit();
-            Session::flash('success', trans('message.create_advisory_success'));
+            Session::flash('success', 'Cảm ơn, chúng tôi sẽ liên hệ với bạn sớm nhất có thể!');
             return redirect()->back();
         } catch (\Exception $ex) {
             DB::rollBack();

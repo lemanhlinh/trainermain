@@ -64,7 +64,7 @@
 <div class="social-chat-online position-fixed">
     <ul class="list-unstyled mb-0">
         <li class="mb-2">
-            <a href="{{ $setting['link_facebook'] }}" target="_blank">
+            <a href="{{ $setting['link_mess_facebook'] }}" target="_blank">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="24" r="24" fill="#1778F2"/>
                     <g clip-path="url(#clip0_170_6623)">
