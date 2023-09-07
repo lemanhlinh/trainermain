@@ -71,6 +71,8 @@
   color: #6B6B6B;
   font-family: HelveticaNeue-Bold;
   font-size: 16px;
+  max-height: 77px;
+  overflow: hidden;
 }
 .content-detail .content-news-highlights .list-related-article .article-highlights .title-program {
   color: #E5AE35;
