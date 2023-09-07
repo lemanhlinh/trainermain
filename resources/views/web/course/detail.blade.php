@@ -27,7 +27,7 @@
                     @include('web.components.image', ['src' => $data->image_pc, 'title'=> $data->title,'class' => 'mb-5'])
                 </div>
                 <div class="d-block d-md-none">
-                    @include('web.components.image', ['src' => $data->image_mobile, 'title'=> $data->title,'class' => 'mb-5 w-100'])
+					<img src="{{ asset($data->image_mobile) }}" alt="{{ $data->title }}" class="img-fluid mb-5 w-100">
                 </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-course" data-bs-toggle="modal" data-bs-target="#exampleModal">
