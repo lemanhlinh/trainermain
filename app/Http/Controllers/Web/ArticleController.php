@@ -56,7 +56,7 @@ class ArticleController extends Controller
         $article = $this->articleRepository->getOneById($id);
 
         SEOTools::setTitle($article->seo_title?$article->seo_title:$article->title);
-        SEOTools::setDescription($article->seo_description?$article->seo_description:$article->title);
+        SEOTools::setDescription($article->seo_description?$article->seo_description:$article->description);
         SEOTools::addImages($article->image?asset($article->image):null);
         SEOTools::setCanonical(url()->current());
         SEOTools::opengraph()->setUrl(url()->current());

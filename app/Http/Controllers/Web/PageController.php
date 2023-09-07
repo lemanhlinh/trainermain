@@ -26,7 +26,7 @@ class PageController extends Controller
         $logo = Setting::where('key', 'logo')->first();
 
         SEOTools::setTitle($page->seo_title?$page->seo_title:$page->title);
-        SEOTools::setDescription($page->seo_description?$page->seo_description:$page->title);
+        SEOTools::setDescription($page->seo_description?$page->seo_description:$page->description);
         SEOTools::addImages($page->image?asset($page->image):null);
         SEOTools::setCanonical(url()->current());
         SEOTools::opengraph()->setUrl(url()->current());

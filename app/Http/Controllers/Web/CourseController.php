@@ -76,7 +76,7 @@ class CourseController extends Controller
         $courses = $this->coursRepository->getAll();
 
         SEOTools::setTitle($data->seo_title?$data->seo_title:$data->title);
-        SEOTools::setDescription($data->seo_description?$data->seo_description:$data->title);
+        SEOTools::setDescription($data->seo_description?$data->seo_description:$data->description);
         SEOTools::addImages($data->image?asset($data->image):null);
         SEOTools::setCanonical(url()->current());
         SEOTools::opengraph()->setUrl(url()->current());

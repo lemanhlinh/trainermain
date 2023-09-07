@@ -63,7 +63,7 @@ class DocumentController extends Controller
         $document = $this->documentRepository->getOneById($id);
 
         SEOTools::setTitle($document->seo_title?$document->seo_title:$document->title);
-        SEOTools::setDescription($document->seo_description?$document->seo_description:$document->title);
+        SEOTools::setDescription($document->seo_description?$document->seo_description:$document->description);
         SEOTools::addImages($document->image?asset($document->image):null);
         SEOTools::setCanonical(url()->current());
         SEOTools::opengraph()->setUrl(url()->current());
