@@ -11,6 +11,8 @@ use App\Models\Setting;
 use App\Repositories\Contracts\DocumentInterface;
 use App\Repositories\Contracts\BannerInterface;
 use App\Repositories\Contracts\CourseInterface;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -33,6 +35,16 @@ class DocumentController extends Controller
      */
     public function index()
     {
+        $logo = Setting::where('key', 'logo')->first();
+
+        SEOTools::setTitle('Trang tài liệu - IELTS TRAINER');
+        SEOTools::setDescription('Trang tài liệu - IELTS TRAINER');
+        SEOTools::addImages(asset($logo->value));
+        SEOTools::setCanonical(url()->current());
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('IELTS TRAINER');
+
         $documents = $this->documentRepository->paginate(9,['id','slug','image','description','title']);
         $banner = $this->bannerRepository->getList(['link_page' => route('homeDocument')],['id','title','image','content'], 1);
         return view('web.document.home', compact('documents','banner'));
@@ -49,6 +61,16 @@ class DocumentController extends Controller
         $documents = $this->documentRepository->getList(['id' => ['!=',$id]],['id','title','slug','image'], 5);
         $courses = $this->coursRepository->getAll();
         $document = $this->documentRepository->getOneById($id);
+
+        SEOTools::setTitle($document->seo_title?$document->seo_title:$document->title);
+        SEOTools::setDescription($document->seo_description?$document->seo_description:$document->title);
+        SEOTools::addImages($document->image?asset($document->image):null);
+        SEOTools::setCanonical(url()->current());
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('IELTS TRAINER');
+        SEOMeta::setKeywords($document->seo_keyword?$document->seo_keyword:$document->title);
+
         return view('web.document.detail', compact('document','documents','courses'));
     }
 

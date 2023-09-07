@@ -14,6 +14,8 @@ use App\Repositories\Contracts\ArticleInterface;
 use App\Repositories\Contracts\BannerInterface;
 use App\Repositories\Contracts\WhyDifferentInterface;
 use App\Repositories\Contracts\StoreInterface;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -44,6 +46,16 @@ class CourseController extends Controller
      */
     public function index()
     {
+        $logo = Setting::where('key', 'logo')->first();
+
+        SEOTools::setTitle('Trang khóa học - IELTS TRAINER');
+        SEOTools::setDescription('Trang khóa học - IELTS TRAINER');
+        SEOTools::addImages(asset($logo->value));
+        SEOTools::setCanonical(url()->current());
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('IELTS TRAINER');
+
         $courses = $this->coursRepository->getAll();
         $banner = $this->bannerRepository->getList(['link_page' => route('homeCourse')],['id','title','image','content'], 1);
         $whyDifferent = $this->whyDifferentRepository->getList(['display_page'=>1],['id','title','content','icon'], 0);
@@ -62,6 +74,16 @@ class CourseController extends Controller
         $data = $this->coursRepository->getOneById($id);
         $course_other = $this->coursRepository->getList([],['id','title','slug','image','price','price_new'], 4);
         $courses = $this->coursRepository->getAll();
+
+        SEOTools::setTitle($data->seo_title?$data->seo_title:$data->title);
+        SEOTools::setDescription($data->seo_description?$data->seo_description:$data->title);
+        SEOTools::addImages($data->image?asset($data->image):null);
+        SEOTools::setCanonical(url()->current());
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('IELTS TRAINER');
+        SEOMeta::setKeywords($data->seo_keyword?$data->seo_keyword:$data->title);
+
         return view('web.course.detail', compact('data','course_other','courses'));
     }
 

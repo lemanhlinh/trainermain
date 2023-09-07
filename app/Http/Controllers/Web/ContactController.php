@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
 use App\Models\Setting;
 use App\Models\Store;
+use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\Contact\CreateContact;
@@ -22,6 +23,16 @@ class ContactController extends Controller
      */
     public function index()
     {
+        $logo = Setting::where('key', 'logo')->first();
+
+        SEOTools::setTitle('Trang liên hệ - IELTS TRAINER');
+        SEOTools::setDescription('Trang liên hệ - IELTS TRAINER');
+        SEOTools::addImages(asset($logo->value));
+        SEOTools::setCanonical(url()->current());
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('IELTS TRAINER');
+
         $stores = Store::where('active', 1)->get();
         return view('web.contact.detail', compact('stores'));
     }
