@@ -25,7 +25,7 @@
                     @foreach($whyDifferent as $item)
                         <div class="box-why">
                             <div class="show-hidden-why">
-                                @include('web.components.image', ['src' => $item->icon, 'title'=> $item->title])
+                                <img src="{{ $item->icon }}" alt="{{ $item->title }}" class="img-fluid">
                                 <p class="title-why-different">{{ $item->title }}</p>
                                 <span>{{ $item->description }}</span>
                             </div>

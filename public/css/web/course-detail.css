@@ -287,3 +287,15 @@
   padding: 12px 20px;
   color: #fff;
 }
+
+.text-promotion {
+  font-size: 20px;
+  font-family: HelveticaNeue-Bold;
+}
+.text-promotion p {
+  color: #BC2330;
+}
+
+.text-promotion-end {
+  color: #BC2330;
+}

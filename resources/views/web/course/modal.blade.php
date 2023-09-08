@@ -44,7 +44,7 @@
                     <div class="col-md-6 border-start ps-md-5">
                         <div class="title-left-popup">Thông tin khách hàng</div>
                         <p class="summary-for-popup">
-                            Để đăng ký khóa học, Quý khách vui lòng điền đầy đủ các thông tin dưới đây. IELTS TRAINER sẽ liên hệ xác nhận trong vòng 15 phút
+                            {!! $setting['description_course_order'] !!}
                         </p>
                         <form action="{{ route('detailCourseStore') }}" class="form-in-detail-course" name="form-in-detail-course" id="form-in-detail-course" method="post">
                             @csrf
@@ -59,9 +59,10 @@
                                     </div>
                                     <div class="custom-control custom-radio position-relative">
                                         <label for="gender2" class="custom-control-label">
-                                        <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" value="1" id="gender2" name="gender">
-                                        <span class="checkmark"></span>
-                                        Chị</label>
+                                            <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" value="1" id="gender2" name="gender">
+                                            <span class="checkmark"></span>
+                                            Chị
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="row">

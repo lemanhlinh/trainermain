@@ -15,7 +15,7 @@
     <li>Địa chỉ: {{ $data['address'] }}</li>
     <li>Ghi chú: {{ $data['note'] }}</li>
     <li>Khóa học đăng ký: <a href="{{ route('detailCourse',[$course->slug,$course->id]) }}" target="_blank" >{{ $course->title }}</a></li>
-    <li>Giá khóa học: {{ number_format($course->price_new, 0, ',', '.') }}đ</li>
+    <li>Giá khóa học: {{ format_money($course->price_new) }}</li>
     @if($data['voucher_course'])
         <li>Mã giảm giá: {{ $data['voucher_course'] }}</li>
         <li>Thông tin: {{ $data['message'] }}, <b>Lưu ý giá trên chưa áp dụng</b></li>

@@ -7,7 +7,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h1 class="title-course">{{ $data->title }}</h1>
-                        <p class="price-course">{{ format_money($data->price_new,'') }}</p>
+                        @if(isset($setting['time_countdown']))
+                            <div id="countdown"></div>
+                        @endif
+                        <p class="price-course d-none">{{ format_money($data->price_new,'') }}</p>
                         <button type="button" class="btn btn-course" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fas fa-book-open"></i> Đăng ký ngay
                         </button>
@@ -140,5 +143,34 @@
                 text: errorMessage,
             });
         @endif
+    </script>
+    <script>
+        // Thời gian bắt đầu và thời gian kết thúc (10 phút)
+        const startTime = new Date().getTime();
+        const endTime = localStorage.getItem('endTime') || (startTime + {{ $setting['time_countdown'] }} * 60 * 1000); // Lấy thời gian kết thúc từ Local Storage hoặc mặc định 10 phút
+
+        // Lưu thời gian kết thúc vào Local Storage
+        localStorage.setItem('endTime', endTime);
+
+        // Cập nhật đồng hồ đếm ngược mỗi giây
+        const countdown = document.getElementById("countdown");
+
+        function updateCountdown() {
+            const currentTime = new Date().getTime();
+            const remainingTime = endTime - currentTime;
+
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            countdown.innerHTML = `<div class="text-promotion">Đăng ký ngay<br> Ưu đãi lên đến 25% <p>${minutes} phút ${seconds} giây</p></div>`;
+
+            if (remainingTime <= 0) {
+                countdown.innerHTML = "<div class='text-promotion text-promotion-end'>Đã hết thời gian!</div>";
+                clearInterval(countdownInterval);
+            }
+        }
+
+        updateCountdown(); // Cập nhật ban đầu
+        const countdownInterval = setInterval(updateCountdown, 1000); // Cập nhật mỗi giây
     </script>
 @endsection

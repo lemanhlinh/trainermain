@@ -340,7 +340,7 @@ function arrGetVal($key, $arr, $defaultValue = '')
     return $arrTemp;
 }
 
-function format_money($price,$current = 'đ',$text = 'liên hệ')
+function format_money($price,$current = 'đ',$text = 'Liên hệ')
 {
     if(!$price)
         return $text;
