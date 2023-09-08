@@ -15,7 +15,7 @@
                                         <div class="col-md-5">
                                             <div class="position-relative">
                                                 <label for="course-{{ $item->id }}">
-                                                    <input class="course-select" value="{{ $item->id }}" data-price="{{ number_format($item->price_new, 0, ',', '.') }}đ" type="radio" name="course-check" id="course-{{ $item->id }}" {{ (!empty($data) && $item->id == $data->id)?'checked':'' }}>
+                                                    <input class="course-select" value="{{ $item->id }}" data-price="{{ format_money($item->price_new) }}" type="radio" name="course-check" id="course-{{ $item->id }}" {{ (!empty($data) && $item->id == $data->id)?'checked':'' }}>
                                                     <span class="checkmark"></span>
                                                     @include('web.components.image', ['src' => $item->image_resize['resize'], 'title' => $item->title])
                                                 </label>
@@ -24,9 +24,9 @@
                                         <div class="col-md-7">
                                             <label for="course-{{ $item->id }}">
                                                 <div class="title-course-re">{{ $item->title }}</div>
-                                                <p class="price-course-popup">{{ number_format($item->price_new, 0, ',', '.') }}đ</p>
+                                                <p class="price-course-popup">{{ format_money($item->price_new) }}</p>
                                                 @if($item->price)
-                                                <p class="price-old-course-popup">{{ number_format($item->price, 0, ',', '.') }}đ</p>
+                                                <p class="price-old-course-popup">{{ format_money($item->price) }}</p>
                                                 @endif
                                             </label>
                                         </div>
@@ -37,7 +37,7 @@
                         <div class="total-payment">
                             <span class="title-total">Tổng thanh toán:</span>
                             <span class="total-price-order" id="total-price-order">
-                            {{ !empty($data) ? number_format($data->price_new, 0, ',', '.') : 0  }}đ
+                            {{ !empty($data) ? format_money($data->price_new) : 0  }}
                             </span>
                         </div>
                     </div>

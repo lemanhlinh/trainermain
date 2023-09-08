@@ -56,7 +56,7 @@ function utf8_for_xml($string)
 
 function cut_string($str, $length, $char = " ...")
 {
-    return \Illuminate\Support\Str::limit($str,$length);
+    return \Illuminate\Support\Str::limit($str, $length);
 
     //Nếu chuỗi cần cắt nhỏ hơn $length thì return luôn
     $strlen = mb_strlen($str, "UTF-8");
@@ -338,4 +338,11 @@ function arrGetVal($key, $arr, $defaultValue = '')
     }
     if (!$arrTemp) $arrTemp = $defaultValue;
     return $arrTemp;
+}
+
+function format_money($price,$current = 'đ',$text = 'liên hệ')
+{
+    if(!$price)
+        return $text;
+    return number_format($price, 0, '.', '.').''.$current.'';
 }

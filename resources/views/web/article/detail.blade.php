@@ -85,7 +85,7 @@
                     </div>
                     <div class="content-news-highlights">
                         <div class="container">
-                            <div class="title-article-highlights">Các khóa học tại IELTS Trainer</div>
+                            <div class="title-article-highlights">Các khóa học tại IELTS TRAINER</div>
                             <div class="list-related-article">
                                 @foreach($courses as $k => $item)
                                     <div class="position-relative article-highlights">
@@ -97,9 +97,9 @@
                                                 <div class="title-program">
                                                     {{ $item->title }}
                                                 </div>
-                                                <p class="price-program">{{ number_format($item->price_new, 0, ',', '.') }}đ</p>
+                                                <p class="price-program">{{ format_money($item->price_new) }}</p>
                                                 @if($item->price)
-                                                <p class="price-old-program">{{ number_format($item->price, 0, ',', '.') }}đ</p>
+                                                <p class="price-old-program">{{ format_money($item->price) }}</p>
                                                 @endif
                                                 <a href="{{ route('detailCourse',['slug' => $item->slug,'id' => $item->id]) }}" class="stretched-link"></a>
                                             </div>

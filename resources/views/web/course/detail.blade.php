@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h1 class="title-course">{{ $data->title }}</h1>
-                        <p class="price-course">{{ number_format($data->price_new, 0, ',', '.') }}</p>
+                        <p class="price-course">{{ format_money($data->price_new,'') }}</p>
                         <button type="button" class="btn btn-course" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fas fa-book-open"></i> Đăng ký ngay
                         </button>
@@ -90,9 +90,9 @@
                                         <a href="{{ route('detailCourse',[$item->slug,$item->id]) }}" class="stretched-link"></a>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between price-course">
-                                        <span class="price-detail">{{ number_format($item->price_new, 0, ',', '.') }}đ</span>
+                                        <span class="price-detail">{{ format_money($item->price_new) }}</span>
                                         @if($item->price)
-                                        <span class="price-new">{{ number_format($item->price, 0, ',', '.') }}đ</span>
+                                        <span class="price-new">{{ format_money($item->price) }}</span>
                                         @endif
                                     </div>
                                 </div>

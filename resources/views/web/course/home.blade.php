@@ -45,12 +45,12 @@
                                     <p class="description-news">{{ $item->description }}</p>
                                     <div class="d-flex align-items-center justify-content-between price-course">
                                         @if($item->price)
-                                        <span class="price-detail">{{ number_format($item->price_new, 0, ',', '.') }}đ</span>
+                                        <span class="price-detail">{{ format_money($item->price_new) }}</span>
                                         @else
                                             <span class="price-detail">Liên hệ</span>
                                         @endif
                                         @if($item->price)
-                                            <span class="price-new">{{ number_format($item->price, 0, ',', '.') }}đ</span>
+                                            <span class="price-new">{{ format_money($item->price) }}</span>
                                         @endif
                                         <a class="show-detail" href="{{ route('detailCourse',[$item->slug,$item->id]) }}">Chi tiết <i class="fas fa-caret-right"></i></a>
                                     </div>
