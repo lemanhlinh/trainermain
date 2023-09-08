@@ -148,6 +148,7 @@
         // Thời gian bắt đầu và thời gian kết thúc (10 phút)
         const startTime = new Date().getTime();
         const endTime = localStorage.getItem('endTime') || (startTime + {{ $setting['time_countdown'] }} * 60 * 1000); // Lấy thời gian kết thúc từ Local Storage hoặc mặc định 10 phút
+        const endTimeRemove = localStorage.getItem('endTime') || (startTime + {{ $setting['time_countdown']+1 }} * 60 * 1000); // Lấy thời gian kết thúc từ Local Storage
 
         // Lưu thời gian kết thúc vào Local Storage
         localStorage.setItem('endTime', endTime);
@@ -165,8 +166,13 @@
             countdown.innerHTML = `<div class="text-promotion">Đăng ký ngay<br> Ưu đãi lên đến 25% <p>${minutes} phút ${seconds} giây</p></div>`;
 
             if (remainingTime <= 0) {
-                countdown.innerHTML = "<div class='text-promotion text-promotion-end'>Đã hết thời gian!</div>";
+                countdown.innerHTML = "<div class='text-promotion text-promotion-end'>Đã hết thời gian ưu đãi!</div>";
                 clearInterval(countdownInterval);
+
+                // Xóa localStorage 'endTime' sau 15 phút
+                setTimeout(function() {
+                    localStorage.removeItem('endTime');
+                }, endTimeRemove * 60 * 1000); // 15 phút
             }
         }
 

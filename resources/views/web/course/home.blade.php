@@ -280,7 +280,7 @@
             countdown.innerHTML = `<div class="text-promotion">Đăng ký ngay<br> Ưu đãi lên đến 25% <p>${minutes} phút ${seconds} giây</p></div>`;
 
             if (remainingTime <= 0) {
-                countdown.innerHTML = "<div class='text-promotion text-promotion-end'>Đã hết thời gian!</div>";
+                countdown.innerHTML = "<div class='text-promotion text-promotion-end'>Đã hết thời gian ưu đãi!</div>";
                 clearInterval(countdownInterval);
 
                 // Xóa localStorage 'endTime' sau 15 phút
