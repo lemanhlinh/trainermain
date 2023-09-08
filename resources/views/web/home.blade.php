@@ -145,7 +145,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="position-relative w-100 h-100 bg-for-form-advisory">
-                            <img src="{{ asset('images/bg-advisory.png') }}" alt="" class="img-fluid">
+                            <img src="{{ asset('images/bg-advisory.svg') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
