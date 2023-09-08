@@ -82,6 +82,15 @@
 .form-advisory .register-learn .form-home-add .submit-form-home i {
   margin-left: 10px;
 }
-.form-advisory .register-learn .bg-for-form-advisory img {
-  bottom: -52px;
+@media (min-width: 768px) {
+  .form-advisory .register-learn .bg-for-form-advisory img {
+    bottom: -52px;
+    right: 0;
+    position: absolute;
+  }
+}
+@media (max-width: 768px) {
+  .form-advisory .register-learn .bg-for-form-advisory img {
+    margin-top: 20px;
+  }
 }

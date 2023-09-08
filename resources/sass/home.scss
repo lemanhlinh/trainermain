@@ -437,7 +437,14 @@
         }
         .bg-for-form-advisory{
             img{
-                bottom: -100px;
+                @media (min-width: 768px) {
+                    bottom: -100px;
+                    right: 0;
+                    position: absolute;
+                }
+                @media (max-width: 768px) {
+                    margin-top: 20px;
+                }
             }
         }
     }
