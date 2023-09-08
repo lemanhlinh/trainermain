@@ -22,12 +22,20 @@
         .list-chat-form{
             ul{
                 li{
-                    img{
+                    background: #e5ae35;
+                    padding: 6px;
+                    border-radius: 10px;
+                    width: 100%;
+                    margin: 0 10px;
+                    svg{
                         transform: perspective(1px) translateZ(0);
                         animation-name: mymove;
                         animation-duration: 1.5s;
                         animation-timing-function: linear;
                         animation-iteration-count: infinite;
+                    }
+                    a{
+                        color: #fff;
                     }
                 }
             }
