@@ -296,6 +296,7 @@
 
         // Cập nhật đồng hồ đếm ngược mỗi giây
         const countdown = document.getElementById("countdown");
+        const countdownInterval = setInterval(updateCountdown, 1000); // Cập nhật mỗi giây
 
         function updateCountdown() {
             const currentTime = new Date().getTime();
@@ -309,15 +310,20 @@
             if (remainingTime <= 0) {
                 countdown.innerHTML = "<div class='text-promotion text-promotion-end'>Đã hết thời gian ưu đãi!</div>";
                 clearInterval(countdownInterval);
-
-                // Xóa localStorage 'endTime' sau 15 phút
-                setTimeout(function() {
-                    localStorage.removeItem('endTime');
-                }, endTimeRemove * 60 * 1000); // 15 phút
             }
         }
 
         updateCountdown(); // Cập nhật ban đầu
-        const countdownInterval = setInterval(updateCountdown, 1000); // Cập nhật mỗi giây
+
+        const endTimeExist = localStorage.getItem('endTime');
+
+        if (endTimeExist) {
+            const timeElapsed = startTime - parseInt(endTime);
+            const secondsElapsed = Math.floor(timeElapsed / 1000 /60 /60);
+            console.log('Thời gian đã tồn tại: ' + secondsElapsed + ' giờ');
+            if(secondsElapsed == 1){
+                localStorage.removeItem('endTime');
+            }
+        }
     </script>
 @endsection

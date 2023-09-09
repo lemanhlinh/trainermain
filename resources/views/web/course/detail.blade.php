@@ -11,7 +11,7 @@
                             <div id="countdown"></div>
                         @endif
                         <p class="price-course d-none">{{ format_money($data->price_new,'') }}</p>
-                        <button type="button" class="btn btn-course" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-course my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fas fa-book-open"></i> Đăng ký ngay
                         </button>
                     </div>
@@ -148,13 +148,13 @@
         // Thời gian bắt đầu và thời gian kết thúc (10 phút)
         const startTime = new Date().getTime();
         const endTime = localStorage.getItem('endTime') || (startTime + {{ $setting['time_countdown'] }} * 60 * 1000); // Lấy thời gian kết thúc từ Local Storage hoặc mặc định 10 phút
-        const endTimeRemove = localStorage.getItem('endTime') || (startTime + {{ $setting['time_countdown']+1 }} * 60 * 1000); // Lấy thời gian kết thúc từ Local Storage
 
         // Lưu thời gian kết thúc vào Local Storage
         localStorage.setItem('endTime', endTime);
 
         // Cập nhật đồng hồ đếm ngược mỗi giây
         const countdown = document.getElementById("countdown");
+        const countdownInterval = setInterval(updateCountdown, 1000); // Cập nhật mỗi giây
 
         function updateCountdown() {
             const currentTime = new Date().getTime();
@@ -168,15 +168,20 @@
             if (remainingTime <= 0) {
                 countdown.innerHTML = "<div class='text-promotion text-promotion-end'>Đã hết thời gian ưu đãi!</div>";
                 clearInterval(countdownInterval);
-
-                // Xóa localStorage 'endTime' sau 15 phút
-                setTimeout(function() {
-                    localStorage.removeItem('endTime');
-                }, endTimeRemove * 60 * 1000); // 15 phút
             }
         }
 
         updateCountdown(); // Cập nhật ban đầu
-        const countdownInterval = setInterval(updateCountdown, 1000); // Cập nhật mỗi giây
+
+        const endTimeExist = localStorage.getItem('endTime');
+
+        if (endTimeExist) {
+            const timeElapsed = startTime - parseInt(endTime);
+            const secondsElapsed = Math.floor(timeElapsed / 1000 /60 /60);
+            console.log('Thời gian đã tồn tại: ' + secondsElapsed + ' giờ');
+            if(secondsElapsed == 1){
+                localStorage.removeItem('endTime');
+            }
+        }
     </script>
 @endsection
