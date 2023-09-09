@@ -179,7 +179,7 @@
             const timeElapsed = startTime - parseInt(endTime);
             const secondsElapsed = Math.floor(timeElapsed / 1000 /60 /60);
             console.log('Thời gian đã tồn tại: ' + secondsElapsed + ' giờ');
-            if(secondsElapsed == 1){
+            if(secondsElapsed >= 1){
                 localStorage.removeItem('endTime');
             }
         }
