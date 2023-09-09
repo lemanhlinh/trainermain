@@ -1,7 +1,7 @@
 <footer class="main-footer text-light">
     <div class="top-footer py-5">
         <div class="container">
-            <p class="mb-4"><img src="{{ asset('images/logo-footer.png') }}" alt=""></p>
+            <p class="mb-4"><img src="{{ asset('images/logo_footer.svg') }}" alt=""></p>
             <div class="row">
                 <div class="col-md-6">
                     {!! $setting['footer_1'] !!}
