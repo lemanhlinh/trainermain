@@ -8,7 +8,7 @@
         <div class="container">
             <h4 class="why-different-title">IELTS TRAINER - đồng hành cùng bạn chinh phục ielts</h4>
             <div class="d-none d-md-block">
-                <div class="list-why-diffe ">
+                <div class="list-why-diffe" style="background: url('{{ asset((!empty($setting['background_home_different']))?$setting['background_home_different']:'images/bg-why.jpg') }}') no-repeat center; ">
                     @foreach($whyDifferent as $item)
                         <div class="box-why">
                             <div class="show-hidden-why">
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="d-block d-md-none">
-                <div class="list-why-different ">
+                <div class="list-why-different" style="background: url('{{ asset((!empty($setting['background_home_different']))?$setting['background_home_different']:'images/bg-why.jpg') }}') no-repeat center; ">
                     @foreach($whyDifferent as $item)
                         <div class="box-why">
                             <div class="show-hidden-why">

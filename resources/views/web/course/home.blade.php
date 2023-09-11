@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="why-different">
+    <div class="why-different" style="background: url('{{ asset((!empty($setting['background_home_course_different']))?$setting['background_home_course_different']:'images/bg-course.jpg') }}') no-repeat center; ">
         <div class="container">
             <div class="d-none d-md-block">
                 <div class="list-why-diffe">
