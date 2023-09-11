@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="top-content-news">
-        <div class="banner-home-article">
+        <div class="banner-home-article py-3">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
