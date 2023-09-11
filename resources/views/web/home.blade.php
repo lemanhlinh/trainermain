@@ -140,7 +140,7 @@
                                 @endif
 
                             </select>
-                            <button class="form-control submit-form-home">đăng ký học thử miển phí <i class="fas fa-paper-plane"></i></button>
+                            <button class="form-control submit-form-home">đăng ký học thử miễn phí <i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
                     <div class="col-md-7">
