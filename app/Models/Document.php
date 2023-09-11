@@ -39,7 +39,9 @@ class Document extends Model
         $resizeImage = $this->resizeImage;
         foreach ($resizeImage as $k => $item){
             $array_resize_ = str_replace($img_path.'/','/storage/document/'.$item[0].'x'.$item[1].'/'.$this->id.'-',$this->image);
-            $array_resize[$k] = str_replace(['.jpg', '.png','.bmp','.gif','.jpeg'],'.webp',$array_resize_);
+            $search = ['.jpg', '.png', '.bmp', '.gif', '.jpeg'];
+            $search = array_map('strtolower', $search);
+            $array_resize[$k] = str_replace($search,'.webp',$array_resize_);
         }
         return $array_resize;
     }
