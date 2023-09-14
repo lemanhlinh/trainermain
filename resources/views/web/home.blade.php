@@ -573,17 +573,19 @@
             <h4 class="why-different-title">Đặc quyền tối đa, thành công vượt xa tại Ielts trainer</h4>
             <div class="list-access">
                 <div class="box-list-access hvr-push px-3">
-                    @include('web.components.image', ['src' => 'images/writing-amico.png'])
+                    @include('web.components.image', ['src' => asset((!empty($setting['icon_home_1']))?$setting['icon_home_1']:'images/writing-amico.png')])
                     <p class="text-center">Tài liệu hỗ trợ học tập, sửa bài hỗ trợ trên nền tảng trực tuyến.</p>
                 </div>
 
                 <div class="box-list-access hvr-push px-3">
-                    @include('web.components.image', ['src' => 'images/Webinar-amico.png'])
+                    @include('web.components.image', ['src' => asset((!empty($setting['icon_home_2']))?$setting['icon_home_2']:'images/Webinar-amico.png')])
+{{--                    @include('web.components.image', ['src' => 'images/Webinar-amico.png'])--}}
                     <p class="text-center">Nội dung đề ôn thi luôn được cập nhật, đảm bảo việc học viên luôn được tiếp cận đề thi mới nhất.</p>
                 </div>
 
                 <div class="box-list-access hvr-push px-3">
-                    @include('web.components.image', ['src' => 'images/teacher-amico.png'])
+                    @include('web.components.image', ['src' => asset((!empty($setting['icon_home_3']))?$setting['icon_home_3']:'images/teacher-amico.png')])
+{{--                    @include('web.components.image', ['src' => 'images/teacher-amico.png'])--}}
                     <p class="text-center">Các giảng viên có chuyên môn cao từ 8.0+ theo sát, chăm sóc học viên kỹ càng, tận tâm như người thân.</p>
                 </div>
             </div>
