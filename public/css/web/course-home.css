@@ -254,6 +254,30 @@
             backdrop-filter: none;
   }
 }
+.why-different .list-why-different .slick-prev, .why-different .list-why-different .slick-next {
+  width: 50px;
+  top: 54%;
+  height: 50px;
+}
+.why-different .list-why-different .slick-prev:before, .why-different .list-why-different .slick-next:before {
+  content: "";
+}
+.why-different .list-why-different .slick-prev {
+  background: url(/images/prev.png?be7930d8ac071e12dd45f7eb0c78840c) no-repeat center;
+  left: -13px;
+  z-index: 1;
+}
+.why-different .list-why-different .slick-prev:hover, .why-different .list-why-different .slick-prev:focus {
+  background: url(/images/prev.png?be7930d8ac071e12dd45f7eb0c78840c) no-repeat center;
+}
+.why-different .list-why-different .slick-next {
+  background: url(/images/next.png?044f151a1d06999591219d172ee1fac9) no-repeat center;
+  right: -13px;
+  z-index: 1;
+}
+.why-different .list-why-different .slick-next:hover, .why-different .list-why-different .slick-next:focus {
+  background: url(/images/next.png?044f151a1d06999591219d172ee1fac9) no-repeat center;
+}
 
 .program-content {
   padding: 60px 0 40px;

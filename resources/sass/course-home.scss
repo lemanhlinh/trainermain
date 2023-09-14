@@ -245,6 +245,33 @@
                 }
             }
         }
+        .slick-prev, .slick-next {
+            width: 50px;
+            top: 54%;
+            height: 50px;
+
+            &:before {
+                content: '';
+            }
+        }
+
+        .slick-prev {
+            background: url(../images/prev.png) no-repeat center;
+            left: -13px;
+            z-index: 1;
+            &:hover, &:focus{
+                background: url(../images/prev.png) no-repeat center;
+            }
+        }
+
+        .slick-next {
+            background: url(../images/next.png) no-repeat center;
+            right: -13px;
+            z-index: 1;
+            &:hover, &:focus{
+                background: url(../images/next.png) no-repeat center;
+            }
+        }
     }
 
 }
