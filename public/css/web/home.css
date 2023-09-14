@@ -282,6 +282,9 @@
 .program-home .image_router {
   margin-top: -150px;
 }
+.program-home .image_router svg {
+  max-width: 100%;
+}
 @media (max-width: 768px) {
   .program-home {
     background: #FFECCA;
@@ -292,7 +295,7 @@
     margin-bottom: 20px;
   }
   .program-home .image_router {
-    margin-top: 0px;
+    margin-top: -150px;
   }
 }
 

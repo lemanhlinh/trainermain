@@ -322,6 +322,9 @@
     }
     .image_router{
         margin-top: -150px;
+        svg{
+            max-width: 100%;
+        }
     }
     @media (max-width: 768px) {
         background: #FFECCA;
@@ -331,7 +334,7 @@
             margin-bottom: 20px;
         }
         .image_router{
-            margin-top: 0px;
+            margin-top: -150px;
         }
     }
 }
