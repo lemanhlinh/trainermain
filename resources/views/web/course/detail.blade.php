@@ -160,10 +160,11 @@
             const currentTime = new Date().getTime();
             const remainingTime = endTime - currentTime;
 
+            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-            countdown.innerHTML = `<div class="text-promotion">Đăng ký ngay<br> Ưu đãi lên đến 25% <p>${minutes} phút ${seconds} giây</p></div>`;
+            countdown.innerHTML = `<div class="text-promotion">Đăng ký ngay<br> Ưu đãi lên đến 25% <p>${hours} giờ ${minutes} phút ${seconds} giây</p></div>`;
 
             if (remainingTime <= 0) {
                 countdown.innerHTML = "<div class='text-promotion text-promotion-end'>Đã hết thời gian ưu đãi!</div>";

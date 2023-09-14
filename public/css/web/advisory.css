@@ -92,15 +92,22 @@
 .form-advisory .register-learn .form-home-add .submit-form-home i {
   margin-left: 10px;
 }
+.form-advisory .register-learn .bg-for-form-advisory {
+  background: url(/images/co-gai.svg?30faf4c7040f29235e2019f253155a09) no-repeat center bottom;
+  background-size: contain;
+}
+.form-advisory .register-learn .bg-for-form-advisory svg, .form-advisory .register-learn .bg-for-form-advisory img {
+  max-width: 100%;
+}
 @media (min-width: 768px) {
-  .form-advisory .register-learn .bg-for-form-advisory img {
+  .form-advisory .register-learn .bg-for-form-advisory svg, .form-advisory .register-learn .bg-for-form-advisory img {
     bottom: -52px;
     right: 0;
     position: absolute;
   }
 }
 @media (max-width: 768px) {
-  .form-advisory .register-learn .bg-for-form-advisory img {
+  .form-advisory .register-learn .bg-for-form-advisory svg, .form-advisory .register-learn .bg-for-form-advisory img {
     margin-top: 20px;
   }
 }

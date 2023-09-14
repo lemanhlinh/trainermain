@@ -1004,5 +1004,19 @@
             ]
         });
 
+        // Thời gian bắt đầu và thời gian kết thúc (10 phút)
+        const startTime = new Date().getTime();
+        const endTime = localStorage.getItem('endTime') || (startTime + {{ $setting['time_countdown'] }} * 60 * 1000); // Lấy thời gian kết thúc từ Local Storage hoặc mặc định 10 phút
+        const endTimeExist = localStorage.getItem('endTime');
+
+        if (endTimeExist) {
+            const timeElapsed = startTime - parseInt(endTime);
+            const secondsElapsed = Math.floor(timeElapsed / 1000 /60 /60);
+            console.log('Thời gian đã tồn tại: ' + secondsElapsed + ' giờ');
+            if(secondsElapsed >= 1){
+                localStorage.removeItem('endTime');
+            }
+        }
+
     </script>
 @endsection
