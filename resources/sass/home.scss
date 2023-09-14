@@ -448,7 +448,10 @@
             }
         }
         .bg-for-form-advisory{
-            img{
+            background: url("../images/co-gai.svg") no-repeat center bottom;
+            background-size: contain;
+            svg,img{
+                max-width: 100%;
                 @media (min-width: 768px) {
                     bottom: -100px;
                     right: 0;
