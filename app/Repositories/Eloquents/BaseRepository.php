@@ -163,16 +163,23 @@ abstract class BaseRepository implements BaseInterface
      * @param $resizeImage
      * @param $id
      * @param string $nameModule
+     * @param string $styleResize
      * @return string
      */
-    public function saveFileUpload(string $file,array $resizeImage = null,int $id = null, string $nameModule)
+    public function saveFileUpload(string $file,array $resizeImage = null,int $id = null, string $nameModule, string $styleResize = null)
     {
         $fileNameWithoutExtension = urldecode(pathinfo($file, PATHINFO_FILENAME));
         $fileName = $fileNameWithoutExtension. '.webp';
 
         if (!empty($resizeImage) && !empty($id)){
             foreach ($resizeImage as $item){
-                $thumbnail = Image::make(asset($file))->fit($item[0], $item[1])->encode('webp', 75);
+                if ($styleResize){
+                    $thumbnail = Image::make(asset($file))->resize($item[0], null,function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->encode('webp', 75);
+                }else{
+                    $thumbnail = Image::make(asset($file))->fit($item[0], $item[1])->encode('webp', 75);
+                }
                 $thumbnailPath = 'storage/'.$nameModule.'/'.$item[0].'x'.$item[1].'/' .$id.'-'. $fileName;
                 Storage::makeDirectory('public/'.$nameModule.'/'.$item[0].'x'.$item[1].'/');
                 $thumbnail->save($thumbnailPath);

@@ -63,7 +63,7 @@ class DocumentController extends Controller
             }
             $model = $this->documentRepository->create($data);
             if (!empty($data['image'])){
-                $this->documentRepository->saveFileUpload($image_root,$this->resizeImage,$model->id,'document');
+                $this->documentRepository->saveFileUpload($image_root,$this->resizeImage,$model->id,'document','resize');
             }
             DB::commit();
             Session::flash('success', trans('message.create_document_success'));
@@ -119,7 +119,7 @@ class DocumentController extends Controller
             $article = $this->documentRepository->getOneById($id);
             if (!empty($data['image']) && $data_root->image != $data['image']){
                 $this->documentRepository->removeImageResize($data_root->image,$this->resizeImage, $id,'document');
-                $data['image'] = $this->documentRepository->saveFileUpload($data['image'],$this->resizeImage, $id,'document');
+                $data['image'] = $this->documentRepository->saveFileUpload($data['image'],$this->resizeImage, $id,'document','resize');
             }
             if (empty($data['slug'])){
                 $data['slug'] = $req->input('slug')?\Str::slug($req->input('slug'), '-'):\Str::slug($data['title'], '-');

@@ -90,9 +90,10 @@ interface BaseInterface
      * @param array $resizeImage
      * @param int $id
      * @param string $nameModule
+     * @param string $styleResize
      * @return mixed
      */
-    public function saveFileUpload(string $file, array $resizeImage , int $id, string $nameModule);
+    public function saveFileUpload(string $file, array $resizeImage , int $id, string $nameModule, string $styleResize);
 
 
 }
