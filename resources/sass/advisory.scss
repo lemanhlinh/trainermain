@@ -95,10 +95,11 @@
             }
         }
         .bg-for-form-advisory{
-            background: url("../images/co-gai.svg") no-repeat center bottom;
-            background-size: contain;
+            //background: url("../images/co-gai.svg") no-repeat center bottom;
+            //background-size: contain;
             svg,img{
                 max-width: 100%;
+                z-index: 2;
                 @media (min-width: 768px) {
                     bottom: -52px;
                     right: 0;
@@ -106,6 +107,24 @@
                 }
                 @media (max-width: 768px) {
                     margin-top: 20px;
+                }
+            }
+            @media(max-width: 768px) {
+                display:flex;
+            }
+            &:after{
+                content: "";
+                position: absolute;
+                bottom: -52px;
+                left: 0;
+                right: 0;
+                background: url('../images/anhcogai.webp') no-repeat center bottom;
+                background-size: contain;
+                z-index: 1;
+                height: 543px;
+
+                @media (max-width: 768px) {
+                    height:618px
                 }
             }
         }
