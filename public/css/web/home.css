@@ -311,6 +311,7 @@
 .form-advisory {
   background: url(/images/bg-form.jpg?068adc0932cc84f4d0bf3b660db8e7e9) left no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 .form-advisory .register-learn {
   padding: 100px 0;

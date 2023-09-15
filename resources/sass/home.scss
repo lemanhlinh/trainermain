@@ -346,6 +346,7 @@
 .form-advisory{
     background: url("../images/bg-form.jpg") left no-repeat;
     background-size: cover;
+    overflow: hidden;
     .register-learn{
         padding: 100px 0;
         @media (max-width: 768px) {
