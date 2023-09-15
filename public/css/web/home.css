@@ -425,6 +425,7 @@
 @media (max-width: 768px) {
   .form-advisory .register-learn .bg-for-form-advisory svg, .form-advisory .register-learn .bg-for-form-advisory img {
     margin-top: 20px;
+    height: 403px;
   }
 }
 @media (max-width: 768px) {
@@ -445,7 +446,7 @@
 }
 @media (max-width: 768px) {
   .form-advisory .register-learn .bg-for-form-advisory:after {
-    height: 618px;
+    height: 511px;
   }
 }
 
