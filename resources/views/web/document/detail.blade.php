@@ -33,14 +33,14 @@
                                 <div class="position-relative related-article">
                                     <div class="row">
                                         <div class="col-4">
-                                            <a href="{{ route('detailArticle',['slug' => $item->slug,'id' => $item->id]) }}" class="link-black">
+                                            <a href="{{ route('detailDocument',['slug' => $item->slug,'id' => $item->id]) }}" class="link-black">
                                                 @include('web.components.image',['src' => $item->image_resize['resize'],'title' => $item->title,'class' => 'hvr-grow' ])
                                             </a>
                                         </div>
                                         <div class="col-8">
                                             <div class="title-new position-relative">
                                                 {{ $item->title }}
-                                                <a href="{{ route('detailArticle',['slug' => $item->slug,'id' => $item->id]) }}" class="stretched-link"></a>
+                                                <a href="{{ route('detailDocument',['slug' => $item->slug,'id' => $item->id]) }}" class="stretched-link"></a>
                                             </div>
                                             <p class="time-create-article ">
                                                 <i class="far fa-clock"></i> {{ $item->created_at_format }}
@@ -65,14 +65,14 @@
                                     <div class="position-relative article-highlights">
                                         <div class="row g-2">
                                             <div class="col-5">
-                                                <a href="{{ route('detailArticle',['slug' => $item->slug,'id' => $item->id]) }}" class="link-black">
+                                                <a href="{{ route('detailDocument',['slug' => $item->slug,'id' => $item->id]) }}" class="link-black">
                                                     @include('web.components.image',['src' => $item->image_resize['small'],'title' => $item->title,'class' => 'hvr-grow' ])
                                                 </a>
                                             </div>
                                             <div class="col-7">
                                                 <div class="title-new position-relative">
                                                     {{ $item->title }}
-                                                    <a href="{{ route('detailArticle',['slug' => $item->slug,'id' => $item->id]) }}" class="stretched-link"></a>
+                                                    <a href="{{ route('detailDocument',['slug' => $item->slug,'id' => $item->id]) }}" class="stretched-link"></a>
                                                 </div>
                                             </div>
                                         </div>
