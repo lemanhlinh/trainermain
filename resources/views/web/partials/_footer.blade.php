@@ -51,7 +51,7 @@
 </footer>
 <div class="position-fixed bottom-0 start-50 translate-middle-x d-block d-md-none w-100 z-3">
     <div class="menu-mobile">
-        <ul class="list-unstyled text-uppercase m-0 d-flex justify-content-between">
+        <ul class="list-unstyled text-uppercase m-0 d-flex justify-content-between align-items-end">
             @include('web.components.menu.mobile')
         </ul>
     </div>

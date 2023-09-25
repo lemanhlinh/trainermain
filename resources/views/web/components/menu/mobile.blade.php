@@ -11,6 +11,12 @@
     </a>
 </li>
 <li class="nav-item" >
+    <a class="nav-link @if (request()->is('admin/role*')) active @endif" href="{{ route('homeDocument') }}">
+        <img src="{{ asset('images/icon_tailieu.svg') }}" alt="" class="img-fluid" style="max-height: 21px;margin-bottom: 4px;">
+        <span>Tài liệu</span>
+    </a>
+</li>
+<li class="nav-item" >
     <a class="nav-link @if (request()->is('admin/role*')) active @endif" href="{{ route('detailPage','trung-tam') }}">
         <i class="fas fa-city"></i>
         <span>Trung tâm</span>
