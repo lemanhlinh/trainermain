@@ -119,7 +119,7 @@ abstract class BaseRepository implements BaseInterface
             return $query->with($relationships)->first();
         }
 
-        return $query->with($relationships)->get();
+        return $query->with($relationships)->orderBy('id', 'DESC')->get();
     }
 
     /**

@@ -1,7 +1,7 @@
 <li class="nav-item" >
     <a class="nav-link @if (request()->is('admin/role*')) active @endif" href="{{ route('home') }}">
         <i class="fas fa-home"></i>
-        <span>Trang chủ</span>
+        <span>Home</span>
     </a>
 </li>
 <li class="nav-item" >
