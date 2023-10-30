@@ -332,7 +332,7 @@
 .program-content .tab-content-program #myTab li:first-child .nav-link {
   margin-left: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .program-content .tab-content-program #myTab li:before, .program-content .tab-content-program #myTab li:after {
     content: "";
     display: none;
