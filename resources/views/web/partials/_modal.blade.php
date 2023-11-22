@@ -52,7 +52,7 @@
         </div>
         <div class="offcanvas-body large">
             <ul class="list-unstyled">
-                <li class="d-flex"><img src="{{ asset('images/mobile/facebook.png') }}" alt="Nhắn tin qua Facebook" class="img-fluid"><a href="{{ $setting['link_facebook'] }}" target="_blank">Nhắn tin qua Facebook <span>{{ $setting['link_facebook'] }}</span></a></li>
+                <li class="d-flex"><img src="{{ asset('images/mobile/facebook.png') }}" alt="Nhắn tin qua Facebook" class="img-fluid"><a href="{{ $setting['link_mess_facebook'] }}" target="_blank">Nhắn tin qua Facebook <span>{{ $setting['link_facebook'] }}</span></a></li>
                 <li class="d-flex"><img src="{{ asset('images/mobile/zalo.png') }}" alt="Nhắn tin qua Zalo" class="img-fluid"><a href="https://zalo.me/{{ $setting['phone_zalo'] }}">Nhắn tin qua Zalo <span>zalo.me/{{ $setting['phone_zalo'] }}</span></a></li>
                 <li class="d-flex"><img src="{{ asset('images/mobile/callcalling.png') }}" alt="Gọi điện thoại trực tiếp" class="img-fluid"><a href="tel:{{ $setting['hotline'] }}">Gọi điện thoại trực tiếp <span>{{ $setting['hotline'] }}</span></a></li>
                 <li class="d-flex"><img src="{{ asset('images/mobile/sms.png') }}" alt="Liên hệ qua Email" class="img-fluid"><a href="mailto:{{ $setting['email'] }}">Liên hệ qua Email <span>{{ $setting['email'] }}</span></a></li>
